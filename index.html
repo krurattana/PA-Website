@@ -37,6 +37,8 @@
   --accent-3:  #ffb347;
   --accent-glow: rgba(255,107,24,.35);
   --accent-soft: rgba(255,107,24,.12);
+  --accent-rgb: 255,107,24;       /* ใช้กับ rgba(var(--accent-rgb),a) — เปลี่ยนตามธีม */
+  --accent-lite-rgb: 255,150,60;  /* โทนสว่างกว่า ใช้กับเงา/แสงเรือง */
   --bg:        #fafafa;
   --bg-2:      #ffffff;
   --surface:   #ffffff;
@@ -46,10 +48,10 @@
   --text-2:    #4a3520;
   --text-dim:  #7a6050;
   --text-faint:#b09070;
-  --line:      rgba(255,107,24,.12);
-  --line-2:    rgba(255,107,24,.22);
-  --shadow:    0 4px 24px rgba(255,107,24,.08);
-  --shadow-lg: 0 16px 60px rgba(255,107,24,.16);
+  --line:      rgba(var(--accent-rgb),.12);
+  --line-2:    rgba(var(--accent-rgb),.22);
+  --shadow:    0 4px 24px rgba(var(--accent-rgb),.08);
+  --shadow-lg: 0 16px 60px rgba(var(--accent-rgb),.16);
   --r:         16px;
   --r-lg:      24px;
   --r-sm:      10px;
@@ -92,7 +94,7 @@ ul{list-style:none}
   backdrop-filter:blur(20px) saturate(180%);
   -webkit-backdrop-filter:blur(20px) saturate(180%);
   border-bottom:1px solid var(--line-2);
-  box-shadow:0 2px 20px rgba(255,107,24,.06);
+  box-shadow:0 2px 20px rgba(var(--accent-rgb),.06);
   transition:background .3s;
 }
 .nav .wrap{display:flex;align-items:center;gap:16px;width:100%}
@@ -148,13 +150,13 @@ ul{list-style:none}
 /* pattern dots decorative */
 .hero-dots{
   position:absolute;inset:0;z-index:1;pointer-events:none;
-  background-image:radial-gradient(circle,rgba(255,107,24,.08) 1px,transparent 1px);
+  background-image:radial-gradient(circle,rgba(var(--accent-rgb),.08) 1px,transparent 1px);
   background-size:32px 32px;
 }
 .hero-accent-circle{
   position:absolute;right:-120px;top:-120px;z-index:0;
   width:600px;height:600px;border-radius:50%;
-  background:radial-gradient(circle,rgba(255,107,24,.12) 0%,transparent 70%);
+  background:radial-gradient(circle,rgba(var(--accent-rgb),.12) 0%,transparent 70%);
   pointer-events:none;
 }
 .hero-inner{
@@ -186,7 +188,7 @@ ul{list-style:none}
   display:inline-flex;align-items:center;gap:6px;
   padding:7px 16px;border-radius:999px;font-size:.88rem;font-weight:600;
   background:#fff;border:1px solid var(--line-2);color:var(--text-2);
-  box-shadow:0 2px 8px rgba(255,107,24,.06);
+  box-shadow:0 2px 8px rgba(var(--accent-rgb),.06);
 }
 .hero-badge .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);display:inline-block}
 .hero-year-box{
@@ -201,14 +203,14 @@ ul{list-style:none}
   flex-shrink:0;width:160px;height:160px;
   border-radius:50%;background:#fff;border:3px solid var(--line-2);
   display:grid;place-items:center;
-  box-shadow:0 8px 40px rgba(255,107,24,.18);
+  box-shadow:0 8px 40px rgba(var(--accent-rgb),.18);
   overflow:hidden;position:relative;
 }
 .hero-logo-box img{width:90%;height:90%;object-fit:contain}
 .hero-logo-box .ph{font-size:3rem}
 .hero-ring{
   position:absolute;inset:-8px;border-radius:50%;
-  border:2px dashed rgba(255,107,24,.3);animation:spinring 20s linear infinite;
+  border:2px dashed rgba(var(--accent-rgb),.3);animation:spinring 20s linear infinite;
 }
 @keyframes spinring{to{transform:rotate(360deg)}}
 
@@ -228,18 +230,18 @@ ul{list-style:none}
 /* แสงเรืองนุ่ม ๆ ด้านหลัง */
 .hp-glow{
   position:absolute;inset:-8%;border-radius:50%;z-index:0;
-  background:radial-gradient(circle,var(--accent-glow) 0%,rgba(255,107,24,.08) 45%,transparent 70%);
+  background:radial-gradient(circle,var(--accent-glow) 0%,rgba(var(--accent-rgb),.08) 45%,transparent 70%);
   filter:blur(4px);animation:hpGlow 4.5s ease-in-out infinite;
 }
 @keyframes hpGlow{0%,100%{opacity:.65;transform:scale(.95)}50%{opacity:1;transform:scale(1.08)}}
 /* วงแหวนประดับ */
 .hp-ring{
   position:absolute;inset:4px;border-radius:50%;z-index:1;
-  border:2px dashed rgba(255,107,24,.32);animation:spinring 24s linear infinite;
+  border:2px dashed rgba(var(--accent-rgb),.32);animation:spinring 24s linear infinite;
 }
 .hp-ring-2{
   position:absolute;inset:-14px;border-radius:50%;z-index:1;
-  border:1.5px solid rgba(255,107,24,.14);
+  border:1.5px solid rgba(var(--accent-rgb),.14);
   border-top-color:var(--accent);
   animation:spinring 16s linear infinite reverse;
 }
@@ -249,7 +251,7 @@ ul{list-style:none}
   width:210px;height:210px;border-radius:50%;
   background:linear-gradient(135deg,#fff7f0,#fff);
   border:4px solid #fff;
-  box-shadow:0 16px 54px rgba(255,107,24,.30),0 0 0 1px var(--line-2);
+  box-shadow:0 16px 54px rgba(var(--accent-rgb),.30),0 0 0 1px var(--line-2);
   overflow:hidden;display:grid;place-items:center;
   animation:floaty 6s ease-in-out infinite;
 }
@@ -261,7 +263,7 @@ ul{list-style:none}
   position:absolute;z-index:3;right:8px;bottom:14px;
   width:64px;height:64px;border-radius:50%;
   background:#fff;border:1px solid var(--line-2);
-  box-shadow:0 8px 22px rgba(255,107,24,.24);
+  box-shadow:0 8px 22px rgba(var(--accent-rgb),.24);
   display:grid;place-items:center;overflow:hidden;
   animation:floaty 6s ease-in-out infinite;
 }
@@ -286,8 +288,8 @@ ul{list-style:none}
 }
 @keyframes goldshine{to{background-position:200% center}}
 .committee-sub{text-align:center;color:var(--text-dim);font-size:.95rem;margin-top:6px;margin-bottom:42px}
-.committee-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;max-width:840px;margin:0 auto}
-.committee-card{display:flex;flex-direction:column;align-items:center;text-align:center}
+.committee-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:28px 36px;max-width:1100px;margin:0 auto}
+.committee-card{display:flex;flex-direction:column;align-items:center;text-align:center;flex:0 0 240px;max-width:260px}
 .cm-photo-wrap{position:relative;width:172px;height:172px;display:grid;place-items:center;margin-bottom:16px}
 /* พื้นหลังล่องลอย — ออร่านุ่มไหวเบา ๆ */
 .cm-aura{
@@ -328,8 +330,8 @@ ul{list-style:none}
 .cm-photo img{width:100%;height:100%;object-fit:cover}
 .cm-photo .ph{font-size:3.4rem;opacity:.42}
 .cm-name{font-family:var(--font-head);font-weight:700;font-size:1.04rem;color:var(--text);line-height:1.3}
-.cm-pos{font-size:.86rem;color:var(--text-dim);margin-top:3px;max-width:100%;text-align:center;line-height:1.45;word-break:break-word;overflow-wrap:anywhere}
-.cm-role{font-family:var(--font-head);font-weight:700;font-size:.82rem;color:var(--accent);margin-top:6px;display:inline-block;max-width:100%;background:var(--accent-soft);border:1px solid var(--line-2);padding:3px 14px;border-radius:14px;line-height:1.4;word-break:break-word;overflow-wrap:anywhere;text-align:center}
+.cm-pos{font-size:.86rem;color:var(--text-dim);margin-top:3px;max-width:100%;text-align:center;line-height:1.45;word-break:break-word;overflow-wrap:anywhere;white-space:pre-line}
+.cm-role{font-family:var(--font-head);font-weight:700;font-size:.82rem;color:var(--accent);margin-top:6px;display:inline-block;max-width:100%;background:var(--accent-soft);border:1px solid var(--line-2);padding:3px 14px;border-radius:14px;line-height:1.4;word-break:break-word;overflow-wrap:anywhere;text-align:center;white-space:pre-line}
 
 /* Editor คณะกรรมการในแผงตั้งค่า */
 .cm-edit-row{display:flex;gap:14px;align-items:flex-start;padding:14px;border:1px solid var(--line-2);border-radius:var(--r-sm);margin-bottom:12px;background:var(--surface-2)}
@@ -337,14 +339,20 @@ ul{list-style:none}
 .cm-edit-preview img{width:100%;height:100%;object-fit:cover}
 .cm-edit-fields{flex:1;display:flex;flex-direction:column;gap:8px;min-width:0}
 .cm-edit-title{font-family:var(--font-head);font-weight:700;font-size:.9rem;color:var(--accent)}
-.cm-edit-fields input{width:100%;padding:9px 12px;border:1px solid var(--line-2);border-radius:8px;font-family:inherit;font-size:.88rem;background:#fff;color:var(--text)}
+.cm-edit-head{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.cm-del-btn{background:#fef2f2;color:#dc2626;border:1px solid #fecaca;border-radius:7px;padding:3px 10px;font-family:inherit;font-size:.78rem;font-weight:700;cursor:pointer}
+.cm-del-btn:hover{background:#dc2626;color:#fff;border-color:#dc2626}
+.cm-add-btn{width:100%;border-style:dashed!important;justify-content:center;margin-top:2px}
+.cm-edit-fields input,.cm-edit-fields textarea{width:100%;padding:9px 12px;border:1px solid var(--line-2);border-radius:8px;font-family:inherit;font-size:.88rem;background:#fff;color:var(--text)}
+.cm-edit-fields textarea{resize:vertical;line-height:1.5;min-height:42px}
 .cm-edit-photo{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
 .cm-edit-photo input{flex:1;min-width:150px}
 .field-with-btn{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
 .field-with-btn input{flex:1;min-width:200px}
 @media(max-width:768px){
   .committee{padding:48px 0 56px}
-  .committee-grid{grid-template-columns:1fr;gap:30px;max-width:300px}
+  .committee-grid{gap:30px;max-width:300px}
+  .committee-card{flex:0 0 100%;max-width:100%}
 }
 
 /* ============================================================
@@ -363,7 +371,7 @@ ul{list-style:none}
   backdrop-filter:blur(20px) saturate(180%);
   -webkit-backdrop-filter:blur(20px) saturate(180%);
   border:1px solid var(--line-2);border-radius:18px;
-  box-shadow:0 18px 54px rgba(255,107,24,.20);
+  box-shadow:0 18px 54px rgba(var(--accent-rgb),.20);
   padding:8px;display:flex;flex-direction:column;gap:2px;
   opacity:0;visibility:hidden;pointer-events:none;
   transition:.28s cubic-bezier(.2,.7,.2,1);
@@ -395,7 +403,7 @@ ul{list-style:none}
 .qtab{
   padding:10px 22px;border-radius:999px;font-size:.88rem;font-weight:600;
   background:#fff;border:1.5px solid var(--line-2);color:var(--text-2);
-  transition:.25s;box-shadow:0 2px 8px rgba(255,107,24,.06);
+  transition:.25s;box-shadow:0 2px 8px rgba(var(--accent-rgb),.06);
   display:inline-flex;align-items:center;gap:6px;
 }
 .qtab:hover,.qtab.active{background:var(--accent);border-color:var(--accent);color:#fff;transform:translateY(-2px);box-shadow:0 6px 20px var(--accent-glow)}
@@ -480,10 +488,10 @@ ul{list-style:none}
 .indicator-card{
   background:var(--surface);border:1px solid var(--line-2);border-radius:var(--r);
   margin-bottom:20px;overflow:hidden;
-  box-shadow:0 2px 12px rgba(255,107,24,.05);
+  box-shadow:0 2px 12px rgba(var(--accent-rgb),.05);
   transition:.25s;
 }
-.indicator-card:hover{box-shadow:var(--shadow);border-color:rgba(255,107,24,.25)}
+.indicator-card:hover{box-shadow:var(--shadow);border-color:rgba(var(--accent-rgb),.25)}
 .ind-header{
   display:flex;align-items:center;gap:14px;padding:18px 22px;
   border-bottom:1px solid var(--line);cursor:pointer;background:var(--surface-card);
@@ -604,6 +612,10 @@ a.link-card{text-decoration:none}
 .drive-portrait .drive-embed iframe,.drive-landscape .drive-embed iframe{height:100%}
 /* พรีวิวไฟล์เอกสารที่อัปโหลด (โหมดฝังในหน้า) — วางซ้อนทีละไฟล์ */
 .file-embed-item{margin-bottom:16px}
+.file-prev-item{margin-bottom:16px}
+.file-prev-item:last-child{margin-bottom:0}
+.file-prev-item .media-img{width:100%;border-radius:12px;box-shadow:var(--shadow)}
+.file-prev-item .file-embed-cap{margin-top:8px}
 .file-embed-item:last-child{margin-bottom:0}
 .file-embed-cap{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:8px;font-size:.86rem}
 .file-embed-name{font-weight:700;color:var(--text-2);word-break:break-all}
@@ -713,7 +725,7 @@ body.admin-mode #fabExit{display:flex}
 .modal{
   background:#fff;border:1px solid var(--line-2);border-radius:var(--r-lg);
   width:100%;max-width:860px;max-height:90vh;display:flex;flex-direction:column;
-  overflow:hidden;box-shadow:0 40px 100px rgba(255,107,24,.12),0 0 0 1px var(--line);
+  overflow:hidden;box-shadow:0 40px 100px rgba(var(--accent-rgb),.12),0 0 0 1px var(--line);
 }
 .modal-head{
   display:flex;align-items:center;justify-content:space-between;
@@ -737,6 +749,14 @@ body.admin-mode #fabExit{display:flex}
 }
 .modal-tab:hover{color:var(--accent)}
 .modal-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+/* 🎨 แผงเลือกคู่สีธีม */
+.theme-swatches{display:grid;grid-template-columns:repeat(auto-fill,minmax(132px,1fr));gap:10px}
+.theme-swatch{display:flex;align-items:center;gap:9px;padding:9px 11px;border:1.5px solid var(--line-2);border-radius:12px;background:var(--surface);transition:.18s;text-align:left}
+.theme-swatch:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:0 6px 18px rgba(var(--accent-rgb),.14)}
+.theme-swatch.active{border-color:var(--accent);background:var(--accent-soft);box-shadow:0 0 0 2px var(--accent-soft)}
+.theme-swatch .ts-chip{width:26px;height:26px;border-radius:8px;flex-shrink:0;box-shadow:inset 0 0 0 1px rgba(0,0,0,.06)}
+.theme-swatch .ts-name{font-family:var(--font-head);font-size:.82rem;font-weight:600;color:var(--text-2);line-height:1.25}
+.theme-swatch.active .ts-name{color:var(--accent)}
 .modal-pane{display:none}
 .settings-group{background:var(--accent-soft,rgba(0,0,0,.02));border:1px solid var(--line);border-radius:14px;padding:18px 18px 16px;margin-bottom:18px}
 .settings-group>.section-head-label:first-child{margin-top:0}
@@ -855,7 +875,7 @@ body.admin-mode #fabExit{display:flex}
 }
 .upload-progress.show{display:flex}
 .upload-progress .spinner{
-  width:18px;height:18px;border:2px solid rgba(255,107,24,.3);border-top-color:var(--accent);
+  width:18px;height:18px;border:2px solid rgba(var(--accent-rgb),.3);border-top-color:var(--accent);
   border-radius:50%;animation:spin .7s linear infinite;flex-shrink:0;
 }
 
@@ -883,7 +903,7 @@ body.admin-mode #fabExit{display:flex}
   display:grid;place-items:center;font-size:1.8rem;
 }
 .up-icon .spinner{
-  width:30px;height:30px;border:3px solid rgba(255,107,24,.25);border-top-color:var(--accent);
+  width:30px;height:30px;border:3px solid rgba(var(--accent-rgb),.25);border-top-color:var(--accent);
   border-radius:50%;animation:spin .8s linear infinite;
 }
 .up-title{font-family:var(--font-head);font-weight:800;font-size:1.15rem;color:var(--text)}
@@ -988,7 +1008,7 @@ a:has(.ic-img-linked){display:block}
 .media-size-half .ic-img,.media-size-third .ic-img,.media-size-twothird .ic-img{aspect-ratio:4/3;max-height:none}
 
 /* Card ลิงก์ระบบ (syscard) */
-.syscard{position:relative;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--surface);box-shadow:0 8px 28px rgba(255,107,24,.10);max-width:100%;height:100%;display:flex;flex-direction:column;transform:perspective(900px) rotateX(0) rotateY(0);transition:transform .4s cubic-bezier(.2,.7,.2,1),box-shadow .4s;will-change:transform;animation:syscardSway 7s ease-in-out infinite}
+.syscard{position:relative;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--surface);box-shadow:0 8px 28px rgba(var(--accent-rgb),.10);max-width:100%;height:100%;display:flex;flex-direction:column;transform:perspective(900px) rotateX(0) rotateY(0);transition:transform .4s cubic-bezier(.2,.7,.2,1),box-shadow .4s;will-change:transform;animation:syscardSway 7s ease-in-out infinite}
 .syscard-cover{position:relative;height:185px;flex-shrink:0;background-size:cover;background-position:center;background-color:#16110d;display:flex;align-items:center;justify-content:center;padding:1rem;overflow:hidden}
 .syscard-cover::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.22),rgba(0,0,0,.72))}
 /* ✨ Shine sweep อัตโนมัติทุก 3.5 วินาที (แสงวิ่งผ่านปกการ์ดระบบ) */
@@ -1030,11 +1050,11 @@ a:has(.ic-img-linked){display:block}
 .media-item:nth-child(3n) .syscard{animation-delay:-4.6s}
 /* ขณะเอียงตามเมาส์ — หยุด auto-sway แล้วให้ JS คุม transform แทน */
 .syscard.tilting{animation:none;transition:transform .1s linear,box-shadow .4s}
-.syscard:hover{box-shadow:0 20px 54px rgba(255,107,24,.30),0 0 0 1px rgba(255,150,60,.22)}
+.syscard:hover{box-shadow:0 20px 54px rgba(var(--accent-rgb),.30),0 0 0 1px rgba(var(--accent-lite-rgb),.22)}
 /* ขอบเรืองแสง (Boundary Glow) สว่างตรงตำแหน่งที่เมาส์ชี้ใกล้ขอบ */
 .syscard::before{
   content:"";position:absolute;inset:0;border-radius:inherit;padding:1.6px;z-index:6;pointer-events:none;
-  background:radial-gradient(170px circle at var(--mx,50%) var(--my,50%),rgba(255,150,60,.95),rgba(255,150,60,0) 62%);
+  background:radial-gradient(170px circle at var(--mx,50%) var(--my,50%),rgba(var(--accent-lite-rgb),.95),rgba(var(--accent-lite-rgb),0) 62%);
   -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
   -webkit-mask-composite:xor;mask-composite:exclude;
   opacity:0;transition:opacity .3s}
@@ -1270,13 +1290,13 @@ a:has(.ic-img-linked){display:block}
 /* กรอบเรืองแสงส้มรอบจุดที่ถูก spotlight */
 #tourRing{
   position:fixed;z-index:3002;border-radius:14px;pointer-events:none;
-  box-shadow:0 0 0 4px var(--accent),0 0 0 9px rgba(255,107,24,.35),0 0 40px rgba(255,150,60,.55);
+  box-shadow:0 0 0 4px var(--accent),0 0 0 9px rgba(var(--accent-rgb),.35),0 0 40px rgba(var(--accent-lite-rgb),.55);
   transition:top .45s cubic-bezier(.2,.8,.2,1),left .45s cubic-bezier(.2,.8,.2,1),width .45s cubic-bezier(.2,.8,.2,1),height .45s cubic-bezier(.2,.8,.2,1);
   animation:tourRingPulse 1.8s ease-in-out infinite;
 }
 @keyframes tourRingPulse{
-  0%,100%{box-shadow:0 0 0 4px var(--accent),0 0 0 9px rgba(255,107,24,.35),0 0 40px rgba(255,150,60,.55)}
-  50%{box-shadow:0 0 0 4px var(--accent),0 0 0 13px rgba(255,107,24,.18),0 0 56px rgba(255,150,60,.7)}
+  0%,100%{box-shadow:0 0 0 4px var(--accent),0 0 0 9px rgba(var(--accent-rgb),.35),0 0 40px rgba(var(--accent-lite-rgb),.55)}
+  50%{box-shadow:0 0 0 4px var(--accent),0 0 0 13px rgba(var(--accent-rgb),.18),0 0 56px rgba(var(--accent-lite-rgb),.7)}
 }
 /* Popover: กล่องคำอธิบาย (Coach mark) */
 #tourPopover{
@@ -1512,7 +1532,7 @@ a:has(.ic-img-linked){display:block}
         </div>
       </div>
       <a href="#sec-part2">ส่วนที่ 2</a>
-      <a href="#sec-part3">ส่วนที่ 3</a>
+      <a href="#sec-part3" class="part3-link">ส่วนที่ 3</a>
     </div>
     <div class="nav-right">
       <button class="icon-btn" id="tourBtn" title="นำชมการใช้งานเว็บไซต์">🧭</button>
@@ -1531,7 +1551,7 @@ a:has(.ic-img-linked){display:block}
   <a href="#dim2-wrap" class="drawer-sub">▸ ด้านการส่งเสริมและสนับสนุนการจัดการเรียนรู้</a>
   <a href="#dim3-wrap" class="drawer-sub">▸ ด้านการพัฒนาตนเองและวิชาชีพ</a>
   <a href="#sec-part2">ส่วนที่ 2 — ประเด็นท้าทาย</a>
-  <a href="#sec-part3">ส่วนที่ 3 — คลิปการสอน</a>
+  <a href="#sec-part3" class="part3-link">ส่วนที่ 3 — คลิปการสอน</a>
 </div>
 
 <!-- ======================================================
@@ -1560,7 +1580,7 @@ a:has(.ic-img-linked){display:block}
         <a class="qtab" href="#sec-history">📂 ประวัติและภาระงาน</a>
         <a class="qtab" href="#sec-part1">📊 ส่วนที่ 1: มาตรฐานตำแหน่ง</a>
         <a class="qtab" href="#sec-part2">💡 ส่วนที่ 2: ประเด็นท้าทาย</a>
-        <a class="qtab" href="#sec-part3">🎬 ส่วนที่ 3: คลิปการสอน</a>
+        <a class="qtab part3-link" href="#sec-part3">🎬 ส่วนที่ 3: คลิปการสอน</a>
       </div>
     </div>
     <div class="hero-portrait-wrap" id="heroPortraitWrap">
@@ -1700,7 +1720,10 @@ a:has(.ic-img-linked){display:block}
       <div style="font-family:var(--font-head);font-weight:800;font-size:1.1rem" id="footerName">นายนนทพัทธ์ หิรัญเรือง</div>
       <div style="font-size:.85rem;opacity:.6;margin-top:4px" id="footerSchool">โรงเรียนกระดุมทองวิทยา</div>
     </div>
-    <div style="font-size:.82rem;opacity:.45">ระบบแสดงผลการประเมินเพื่อคงวิทยฐานะ</div>
+    <div style="text-align:right">
+      <div style="font-size:.82rem;opacity:.45">ระบบแสดงผลการประเมินเพื่อคงวิทยฐานะ</div>
+      <div style="font-size:.78rem;opacity:.55;margin-top:4px">เว็บไซต์สำเร็จรูปนี้ พัฒนาโดยครูนนทพัทธ์ หิรัญเรือง</div>
+    </div>
   </div>
 </footer>
 
@@ -1771,6 +1794,11 @@ a:has(.ic-img-linked){display:block}
               <label>ข้อความต้อนรับ (แสดงใน Hero + แถบเลื่อนขวา)</label>
               <input id="s_welcomeText" placeholder="ยินดีต้อนรับคณะกรรมการผู้ประเมิน" value="ยินดีต้อนรับคณะกรรมการผู้ประเมิน"/>
             </div>
+            <div class="field-row">
+              <div class="field"><label>ชื่อการประเมิน (ข้อความปกติ)</label><input id="s_heroTitle" placeholder="การประเมินเพื่อ"/></div>
+              <div class="field"><label>ชื่อการประเมิน (คำเน้นสี — ต่อท้าย)</label><input id="s_heroTitleHl" placeholder="คงวิทยฐานะ"/></div>
+            </div>
+            <div class="field-note">ตัวอย่าง: "การประเมินเพื่อ" + "คงวิทยฐานะ" → แสดงเป็น <b>การประเมินเพื่อ<span style="color:var(--accent)">คงวิทยฐานะ</span></b> บน Hero (คำเน้นสีจะเป็นสีธีม)</div>
           </div>
 
           <div class="settings-group">
@@ -1787,10 +1815,13 @@ a:has(.ic-img-linked){display:block}
                 <button type="button" class="btn btn-ghost btn-sm" onclick="pickCropTo(u=>{$('s_logoUrl').value=u;},'1/1')">📤 อัปโหลด/ครอป</button>
               </div>
             </div>
-            <div class="field-row">
-              <div class="field"><label>ภาพ Hero พื้นหลัง URL</label><input id="s_heroUrl" placeholder="https://..."/></div>
-              <div class="field"><label>Favicon URL</label><input id="s_faviconUrl" placeholder="https://..."/></div>
+            <div class="field"><label>ภาพ Hero พื้นหลัง</label>
+              <div class="field-with-btn">
+                <input id="s_heroUrl" placeholder="https://... หรือกดอัปโหลด"/>
+                <button type="button" class="btn btn-ghost btn-sm" onclick="pickCropTo(u=>{$('s_heroUrl').value=u;},'16/9')">📤 อัปโหลด/ครอป</button>
+              </div>
             </div>
+            <div class="field"><label>Favicon URL</label><input id="s_faviconUrl" placeholder="https://..."/></div>
           </div>
 
           <div class="settings-group">
@@ -1818,6 +1849,15 @@ a:has(.ic-img-linked){display:block}
         <!-- Pane: รูปลักษณ์ & ทัวร์ (ฟอนต์ + ทัวร์ + ความปลอดภัย) -->
         <div class="modal-pane" data-pane="appearance">
           <div class="settings-group">
+            <div class="section-head-label">🎨 โทนสีเว็บไซต์ — เลือกคู่สี</div>
+            <p style="font-size:.82rem;color:var(--text-dim);margin-bottom:12px;line-height:1.7">
+              เลือกโทนสีหลักของทั้งเว็บไซต์ ระบบจะปรับเฉดสี พื้นผิว และเงาให้กลมกลืนกันอัตโนมัติ
+              — กดเพื่อ<strong>พรีวิวทันที</strong> แล้วกด <strong>💾 บันทึกการตั้งค่า</strong> เพื่อจัดเก็บ
+            </p>
+            <div id="themeSwatches" class="theme-swatches"></div>
+          </div>
+
+          <div class="settings-group">
             <div class="section-head-label">🔒 ความปลอดภัย — โหมดปิดกั้นการเข้าถึง</div>
             <label class="block-toggle" for="s_blockLinks">
               <input type="checkbox" id="s_blockLinks"/>
@@ -1825,6 +1865,18 @@ a:has(.ic-img-linked){display:block}
               <span class="block-toggle-label">
                 <b>เปิดโหมดปิดกั้นไม่ให้เข้าถึงลิงก์/เนื้อหาฝัง</b>
                 <small>เมื่อเปิด ผู้เข้าชมจะคลิกเปิดลิงก์ระบบ/ลิงก์ฝัง/วิดีโอ/เอกสารฝังไม่ได้ และจะเด้งข้อความแจ้งเตือนแทน — ใช้ป้องกันความปลอดภัยของระบบที่ฝังไว้ แล้วค่อยปิดโหมดนี้เฉพาะช่วงกรรมการประเมิน (ผู้ดูแลที่ปลดล็อกแล้วยังเปิดได้ตามปกติ)</small>
+              </span>
+            </label>
+          </div>
+
+          <div class="settings-group">
+            <div class="section-head-label">🎬 ส่วนที่ 3 — คลิปการสอน</div>
+            <label class="block-toggle" for="s_showPart3">
+              <input type="checkbox" id="s_showPart3"/>
+              <span class="block-toggle-track"><span class="block-toggle-thumb"></span></span>
+              <span class="block-toggle-label">
+                <b>แสดงส่วนที่ 3 (คลิปการสอน) บนเว็บไซต์</b>
+                <small>ปิดสวิตช์นี้เพื่อ<strong>ซ่อน</strong>ส่วนที่ 3 ทั้งหมด รวมถึงลิงก์นำทางทุกจุดที่ชี้ไปยังส่วนนี้ — เหมาะกับปีที่ไม่ได้ส่งคลิปการสอน (เนื้อหาเดิมไม่ถูกลบ เปิดสวิตช์เมื่อใดก็กลับมาแสดงเหมือนเดิม)</small>
               </span>
             </label>
           </div>
@@ -1907,6 +1959,23 @@ a:has(.ic-img-linked){display:block}
             </p>
             <button class="btn btn-primary" id="exportReportBtn" style="background:linear-gradient(135deg,#1a1008,#5a4020)">📖 ส่งออกเป็นเล่มรายงาน (.docx)</button>
           </div>
+
+          <div class="settings-group">
+            <div class="section-head-label">🔳 เอกสาร QR code เข้าชมเว็บไซต์</div>
+            <p style="font-size:.82rem;color:var(--text-dim);margin-bottom:12px;line-height:1.7">
+              สร้างเอกสาร <strong>A4 แนวตั้ง</strong> สำหรับปริ้น/ติดประกาศ ประกอบด้วยโลโก้ · QR code ของเว็บไซต์ ·
+              ชื่อระบบและเจ้าของ · คำอธิบาย — ตกแต่งมุมกระดาษด้วยสีธีมปัจจุบัน (กดแล้วเปิดหน้าต่างพร้อมสั่งพิมพ์/บันทึกเป็น PDF)
+            </p>
+            <div class="field">
+              <label>คำอธิบายระบบ (1 ย่อหน้า — แสดงใต้ชื่อในเอกสาร QR)</label>
+              <textarea id="s_systemDesc" rows="3" placeholder="อธิบายว่าเว็บไซต์นี้คืออะไร ใช้ทำอะไร..."></textarea>
+            </div>
+            <div class="field">
+              <label>ลิงก์เว็บไซต์สำหรับ QR (เว้นว่าง = ใช้ URL หน้านี้อัตโนมัติ)</label>
+              <input id="s_qrUrl" placeholder="https://... (เว้นว่างเพื่อใช้ลิงก์ปัจจุบัน)"/>
+            </div>
+            <button class="btn btn-primary" id="makeQrDocBtn" style="background:linear-gradient(135deg,var(--accent-2),var(--accent))">🔳 สร้างเอกสาร QR code</button>
+          </div>
         </div>
 
         <!-- Pane: Indicators -->
@@ -1939,13 +2008,14 @@ a:has(.ic-img-linked){display:block}
           <input type="hidden" id="editingIndId"/>
           <div class="divider"></div>
           <div class="section-head-label">📥 Import จาก Excel</div>
-          <p style="font-size:.88rem;color:var(--text-dim);margin-bottom:10px">ไฟล์ต้องมีคอลัมน์: <strong>ด้าน | ลำดับ | ชื่อตัวชี้วัด | คำบรรยาย</strong></p>
+          <p style="font-size:.88rem;color:var(--text-dim);margin-bottom:10px">ไฟล์ต้องมีคอลัมน์: <strong>ด้าน | ลำดับ | ชื่อตัวชี้วัด | ระบุสิ่งที่มี/สิ่งที่ทำ | คำบรรยาย</strong><br><span style="font-size:.82rem">กรอกเฉพาะ <b>“ระบุสิ่งที่มี/สิ่งที่ทำ”</b> ก็พอ แล้วใช้ปุ่ม <b>Master Prompt</b> ให้ AI ช่วยร่าง “คำบรรยาย” เชิงวิชาการให้</span></p>
           <div style="display:flex;gap:10px;flex-wrap:wrap">
             <label class="btn btn-ghost btn-sm" style="cursor:pointer">
               📂 นำเข้า Excel
               <input type="file" id="importExcelFile" accept=".xlsx,.xls" hidden/>
             </label>
             <button class="btn btn-ghost btn-sm" id="downloadTemplateBtn" onclick="downloadTemplate()">⬇ ดาวน์โหลด Template</button>
+            <button class="btn btn-ghost btn-sm" onclick="copyIndicatorPrompt()">🤖 คัดลอก Master Prompt</button>
           </div>
           <div class="divider"></div>
           <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px">
@@ -2244,8 +2314,9 @@ a:has(.ic-img-linked){display:block}
           <input type="file" id="icXlsxFile" accept=".xlsx,.xls" hidden onchange="icImportXlsx(event)"/>
         </label>
         <button class="btn btn-ghost btn-sm" onclick="icDownloadTemplate()">⬇ ดาวน์โหลดเทมเพลต</button>
+        <button class="btn btn-ghost btn-sm" onclick="copyCaptionPrompt()">🤖 คัดลอก Master Prompt</button>
       </div>
-      <div class="ic-bulk-note">รูปแบบไฟล์ .xlsx: คอลัมน์ <b>A = หัวข้อหลัก</b>, <b>B = คำบรรยาย</b>, <b>C = URL รูป</b> (ไม่บังคับ) — หรือกดช่องรูปในแต่ละแถวเพื่ออัปโหลดเองได้</div>
+      <div class="ic-bulk-note">รูปแบบไฟล์: คอลัมน์ <b>A = หัวข้อหลัก</b>, <b>B = ระบุสิ่งที่มี/สิ่งที่ทำ</b>, <b>C = คำบรรยาย</b>, <b>D = URL รูป</b> (ไม่บังคับ) — กรอกเฉพาะ “สิ่งที่ทำ” แล้วใช้ Master Prompt ให้ AI ช่วยร่าง “คำบรรยาย” ได้ · หรือกดช่องรูปในแต่ละแถวเพื่ออัปโหลดเองได้</div>
       <div id="icBulkRows" class="ic-bulk-rows"></div>
     </div>
     <div class="crop-tools" style="justify-content:flex-end;margin-top:14px">
@@ -2393,8 +2464,149 @@ const SW = {
 };
 
 // ============================================================
+// 🔔 UNSAVED CHANGES GUARD — เตือนเมื่อกดปิด modal ทั้งที่มีการแก้ไขแต่ยังไม่บันทึก
+// ============================================================
+// เก็บ "ภาพถ่าย" (snapshot) ค่าฟอร์มของ modal ตอนเปิด เพื่อใช้เทียบว่ามีการเปลี่ยนแปลงหรือไม่
+const _dirtySnapshots = {};
+// อ่านค่าปัจจุบันของ input/textarea/select ทั้งหมดภายใน overlay → string เดียวเพื่อเทียบง่าย
+function _snapshotForm(overlayId){
+  const root = $(overlayId);
+  if(!root) return "";
+  const fields = root.querySelectorAll("input, textarea, select");
+  return Array.from(fields).map(f=>{
+    if(f.type==="checkbox"||f.type==="radio") return (f.name||f.id||"")+"="+(f.checked?"1":"0");
+    return (f.name||f.id||"")+"="+(f.value||"");
+  }).join("");
+}
+// บันทึก snapshot ตอนเปิด modal (เรียกหลังเติมค่าฟอร์มเสร็จ) — extra = ฟังก์ชันคืนค่าสถานะเพิ่มเติม (เช่นข้อมูล bulk)
+function markClean(overlayId, extra){
+  _dirtySnapshots[overlayId] = _snapshotForm(overlayId) + "" + (extra ? extra() : "");
+}
+// ตรวจว่ามีการเปลี่ยนแปลงจาก snapshot หรือไม่
+function isDirty(overlayId, extra){
+  if(!(overlayId in _dirtySnapshots)) return false;
+  const now = _snapshotForm(overlayId) + "" + (extra ? extra() : "");
+  return now !== _dirtySnapshots[overlayId];
+}
+// กล่องยืนยันก่อนปิดเมื่อมีการเปลี่ยนแปลง → คืน true ถ้าควรปิดได้
+function confirmDiscard(){
+  return Swal.fire({
+    icon:"warning",
+    title:"ยังไม่ได้บันทึก",
+    text:"คุณมีการเปลี่ยนแปลงที่ยังไม่ได้บันทึก หากปิดตอนนี้การเปลี่ยนแปลงจะหายไป ต้องการปิดหรือไม่?",
+    showCancelButton:true,
+    confirmButtonText:"ปิดโดยไม่บันทึก",
+    cancelButtonText:"กลับไปแก้ไขต่อ",
+    confirmButtonColor:"#dc2626"
+  }).then(r=>r.isConfirmed);
+}
+// ปิด modal อย่างปลอดภัย: ถ้า dirty ให้ถามก่อน แล้วค่อยเรียก doClose()
+async function guardedClose(overlayId, doClose, extra){
+  if(isDirty(overlayId, extra)){
+    const ok = await confirmDiscard();
+    if(!ok) return;        // ผู้ใช้เลือกแก้ไขต่อ → ไม่ปิด
+  }
+  delete _dirtySnapshots[overlayId];
+  doClose();
+}
+
+// ============================================================
 // GLOBAL STATE
 // ============================================================
+// ============================================================
+// 🎨 ระบบธีมสี — คัดคู่สีมินิมอลสวยงาม เปลี่ยนทั้งเว็บได้จากตัวแปร CSS
+// ระบุเฉพาะสี accent หลักของแต่ละธีม ส่วนเฉดอื่น/พื้นผิว/เงา จะคำนวณให้อัตโนมัติ
+// ============================================================
+const THEMES = {
+  orange:  {name:"ส้มอบอุ่น (เริ่มต้น)", accent:"#ff6b18"},
+  coral:   {name:"ส้มปะการัง",          accent:"#f4633a"},
+  red:     {name:"แดงชาด",              accent:"#e23744"},
+  rose:    {name:"ชมพูกุหลาบ",          accent:"#f43f5e"},
+  fuchsia: {name:"บานเย็น",             accent:"#d6409f"},
+  violet:  {name:"ม่วงองุ่น",           accent:"#8b5cf6"},
+  indigo:  {name:"น้ำเงินคราม",         accent:"#5b54e6"},
+  blue:    {name:"ฟ้าหลวง",             accent:"#2563eb"},
+  sky:     {name:"ฟ้าคราม",             accent:"#0ea5e9"},
+  teal:    {name:"เขียวน้ำทะเล",        accent:"#0d9488"},
+  emerald: {name:"เขียวมรกต",           accent:"#10b981"},
+  amber:   {name:"ทองอำพัน",            accent:"#d97706"},
+  mocha:   {name:"น้ำตาลกาแฟ",          accent:"#9a6a3f"},
+  slate:   {name:"เทากราไฟต์",          accent:"#475569"},
+};
+let THEME_ACCENT = "#ff6b18";   // ใช้กับปุ่ม SweetAlert ที่ตั้งสีผ่าน JS
+let currentThemeId = "orange";
+
+// แปลง hex → {r,g,b}
+function _hexRgb(h){ h=h.replace("#",""); if(h.length===3) h=h.split("").map(c=>c+c).join(""); return {r:parseInt(h.slice(0,2),16),g:parseInt(h.slice(2,4),16),b:parseInt(h.slice(4,6),16)}; }
+// ผสมสีกับขาว/ดำ: amt>0 สว่างขึ้น, amt<0 เข้มขึ้น (-1..1)
+function _mix(rgb, amt){
+  const t = amt<0 ? 0 : 255, p = Math.abs(amt);
+  const f=v=>Math.round((t-v)*p+v);
+  return {r:f(rgb.r),g:f(rgb.g),b:f(rgb.b)};
+}
+const _hx = rgb => "#" + [rgb.r,rgb.g,rgb.b].map(v=>v.toString(16).padStart(2,"0")).join("");
+const _csv = rgb => `${rgb.r},${rgb.g},${rgb.b}`;
+
+// สร้าง CSS :root override จากสี accent ของธีม
+function _themeCss(accentHex){
+  const a = _hexRgb(accentHex);
+  const a2 = _mix(a,-0.18);          // เข้มขึ้น (ไล่เฉดปุ่ม/ไฮไลต์)
+  const a3 = _mix(a, 0.42);          // สว่างขึ้น
+  const aLite = _mix(a, 0.28);       // โทนเรืองแสง
+  const surf2  = _mix(a, 0.955);     // พื้นผิวเฉดอ่อนมาก
+  const surfCd = _mix(a, 0.975);
+  const bg     = _mix(a, 0.985);
+  return `:root{
+  --accent:${accentHex};
+  --accent-2:${_hx(a2)};
+  --accent-3:${_hx(a3)};
+  --accent-rgb:${_csv(a)};
+  --accent-lite-rgb:${_csv(aLite)};
+  --accent-glow:rgba(${_csv(a)},.35);
+  --accent-soft:rgba(${_csv(a)},.12);
+  --bg:${_hx(bg)};
+  --surface-2:${_hx(surf2)};
+  --surface-card:${_hx(surfCd)};
+  --line:rgba(${_csv(a)},.12);
+  --line-2:rgba(${_csv(a)},.22);
+  --shadow:0 4px 24px rgba(${_csv(a)},.08);
+  --shadow-lg:0 16px 60px rgba(${_csv(a)},.16);
+}`;
+}
+
+// ใช้ธีม: ฉีด <style> override + อัปเดต THEME_ACCENT
+function applyTheme(id){
+  const t = THEMES[id] || THEMES.orange;
+  currentThemeId = THEMES[id] ? id : "orange";
+  THEME_ACCENT = t.accent;
+  let el = document.getElementById("customThemeStyle");
+  if(!el){ el = document.createElement("style"); el.id = "customThemeStyle"; document.head.appendChild(el); }
+  el.textContent = _themeCss(t.accent);
+}
+
+// เลือกธีมในหน้าตั้งค่า (พรีวิวทันที — บันทึกเมื่อกด \"บันทึกการตั้งค่า\")
+function selectTheme(id){ applyTheme(id); refreshThemeSwatchUI(); }
+
+// สร้างแผงตัวอย่างคู่สี (เรียกครั้งเดียวตอนเริ่ม)
+function renderThemeSwatches(){
+  const box = $("themeSwatches");
+  if(!box) return;
+  box.innerHTML = Object.entries(THEMES).map(([id,t])=>{
+    const a=_hexRgb(t.accent), a2=_mix(a,-0.18);
+    return `<button type="button" class="theme-swatch" data-theme="${id}" onclick="selectTheme('${id}')" title="${esc(t.name)}">
+      <span class="ts-chip" style="background:linear-gradient(135deg,${t.accent},${_hx(a2)})"></span>
+      <span class="ts-name">${esc(t.name)}</span>
+    </button>`;
+  }).join("");
+  refreshThemeSwatchUI();
+}
+// ไฮไลต์ธีมที่เลือกอยู่
+function refreshThemeSwatchUI(){
+  document.querySelectorAll("#themeSwatches .theme-swatch").forEach(b=>{
+    b.classList.toggle("active", b.dataset.theme===currentThemeId);
+  });
+}
+
 let siteSettings = {
   name: "นายนนทพัทธ์ หิรัญเรือง",
   position: "ครู",
@@ -2407,8 +2619,13 @@ let siteSettings = {
   faviconUrl: "",
   pin: "1234",
   blockLinks: false,   // โหมดปิดกั้นไม่ให้เข้าถึงลิงก์/เนื้อหาฝัง (เปิดเฉพาะช่วงกรรมการประเมิน)
+  showPart3: true,     // แสดง/ซ่อน ส่วนที่ 3 (คลิปการสอน) — บางปีไม่ได้ส่งคลิปสอน
   tourMode: "off",     // off | auto | test — โหมด Product Tour อัตโนมัติ
+  theme: "orange",     // ธีมสีของเว็บ (ดู THEMES)
   welcomeText: "ยินดีต้อนรับคณะกรรมการผู้ประเมิน",
+  heroTitle: "การประเมินเพื่อ",   // ชื่อการประเมิน (ส่วนข้อความปกติบน Hero)
+  heroTitleHl: "คงวิทยฐานะ",       // ชื่อการประเมิน (ส่วนที่เน้นสี — ต่อท้าย)
+  systemDesc: "เว็บไซต์แสดงผลการประเมินเพื่อคงวิทยฐานะของข้าราชการครู รวบรวมหลักฐาน ผลการปฏิบัติงานตามมาตรฐานตำแหน่ง ประเด็นท้าทาย และสื่อการสอน ไว้ในที่เดียว สแกน QR code เพื่อเข้าชมเว็บไซต์",  // คำอธิบายระบบ (ใช้ในเอกสาร QR)
   committeeWelcome: "ยินดีต้อนรับคณะกรรมการ",
   committeeSub: "คณะกรรมการประเมินเพื่อคงวิทยฐานะ",
   committee: [
@@ -2438,7 +2655,7 @@ function blockedLinkWarn(){
     title:"แอดมินไม่อนุญาตให้คุณเข้าชมลิงก์",
     html:'<div style="font-size:.92rem;color:#7a6050;line-height:1.7">เนื้อหาฝัง/ลิงก์ระบบถูกปิดกั้นชั่วคราวเพื่อความปลอดภัย<br>กรุณาติดต่อผู้ดูแลระบบหากต้องการเข้าชม</div>',
     confirmButtonText:"รับทราบ",
-    confirmButtonColor:"#ff6b18"
+    confirmButtonColor:THEME_ACCENT
   });
   return false;
 }
@@ -2782,6 +2999,9 @@ async function loadCustomFonts(){
 
 function applySiteSettings(){
   const s = siteSettings;
+  // ธีมสี
+  applyTheme(s.theme || "orange");
+  refreshThemeSwatchUI();
   // อัปเดต Drive config จาก settings
   DRIVE_UPLOAD_ENDPOINT = s.gasEndpoint||"";
   DRIVE_FOLDER_ID = s.driveFolderId||"";
@@ -2807,6 +3027,10 @@ function applySiteSettings(){
   if(s.portraitUrl){
     $("heroPortraitContent").outerHTML = `<img id="heroPortraitContent" src="${esc(s.portraitUrl)}" style="width:100%;height:100%;object-fit:cover" onerror="this.outerHTML='<span class=hp-ph id=heroPortraitContent>👤</span>'"/>`;
   }
+  // ชื่อการประเมิน (Hero title) — ส่วนปกติ + ส่วนเน้นสี
+  const htMain = s.heroTitle!=null ? s.heroTitle : "การประเมินเพื่อ";
+  const htHl   = s.heroTitleHl!=null ? s.heroTitleHl : "คงวิทยฐานะ";
+  $("heroTitle").innerHTML = esc(htMain) + (htHl ? `<span class="hl">${esc(htHl)}</span>` : "");
   $("heroName").textContent = s.name||"";
   $("heroPosition").textContent = s.position||"";
   $("heroAcademic").textContent = s.academic||"";
@@ -2822,6 +3046,15 @@ function applySiteSettings(){
   document.title = `ระบบประเมิน — ${s.name||""}`;
   // Welcome text animation
   initWelcomeAnimation(s.welcomeText||"ยินดีต้อนรับคณะกรรมการผู้ประเมิน");
+  // แสดง/ซ่อน ส่วนที่ 3 (คลิปการสอน)
+  applyPart3Visibility();
+}
+// ซ่อน/แสดง section ส่วนที่ 3 + ลิงก์นำทางทั้งหมดที่ชี้ไปยังส่วนนี้
+function applyPart3Visibility(){
+  const show = siteSettings.showPart3 !== false;   // ค่าเริ่มต้น = แสดง
+  const sec = $("sec-part3");
+  if(sec) sec.style.display = show ? "" : "none";
+  document.querySelectorAll(".part3-link").forEach(a=>{ a.style.display = show ? "" : "none"; });
 }
 
 // ============================================================
@@ -2926,14 +3159,14 @@ function renderCommittee(){
   const list = Array.isArray(siteSettings.committee) ? siteSettings.committee : [];
   const defRole = ["ประธานกรรมการ","กรรมการ","กรรมการและเลขานุการ"];
   let html = "";
-  for(let i=0;i<3;i++){
+  for(let i=0;i<list.length;i++){              // รองรับกรรมการจำนวนเท่าใดก็ได้
     const m = list[i] || {};
     const photo = m.photo
       ? `<img src="${esc(m.photo)}" onerror="this.outerHTML='<span class=ph>👤</span>'"/>`
       : `<span class="ph">👤</span>`;
-    const org = (m.position||"").trim();          // ตำแหน่งในหน่วยงาน
+    const org = (m.position||"").trim();          // ตำแหน่งในหน่วยงาน (ขึ้นบรรทัดเองได้)
     const role = (m.role||defRole[i]||"").trim();  // ตำแหน่งในคณะกรรมการ
-    html += `<div class="committee-card reveal" data-d="${i+1}">
+    html += `<div class="committee-card reveal" data-d="${Math.min(i+1,6)}">
       <div class="cm-photo-wrap">
         <div class="cm-aura"></div>
         ${cmSparkles()}
@@ -3300,10 +3533,11 @@ function renderMediaItems(items, context, blockId){
       </select>` : "";
     const fileDispSel = (isAdmin && item.type==="file") ? `
       <select class="media-size-sel" title="รูปแบบแสดงไฟล์" onchange="updateMediaField('${context}','${bid}',${idx},'fileDisplay',this.value)">
-        <option value="list"${(item.fileDisplay||"list")==="list"?" selected":""}>📥 รายการดาวน์โหลด</option>
-        <option value="embed"${item.fileDisplay==="embed"?" selected":""}>🖼 พรีวิวฝังในหน้า</option>
+        <option value="preview"${(item.fileDisplay||"preview")==="preview"?" selected":""}>🪄 พรีวิวอัตโนมัติ (รูป/เอกสาร)</option>
+        <option value="list"${item.fileDisplay==="list"?" selected":""}>📥 รายการดาวน์โหลด</option>
+        <option value="embed"${item.fileDisplay==="embed"?" selected":""}>🖼 ฝังพรีวิวทั้งหมด</option>
       </select>` : "";
-    const showOrient = item.type==="drivedoc" || (item.type==="file" && item.fileDisplay==="embed");
+    const showOrient = item.type==="drivedoc" || (item.type==="file" && item.fileDisplay!=="list");
     const orientSel = (isAdmin && showOrient) ? `
       <select class="media-size-sel" title="แนวกระดาษเอกสาร" onchange="updateMediaField('${context}','${bid}',${idx},'orient',this.value)">
         <option value="portrait"${(item.orient||"portrait")==="portrait"?" selected":""}>📄 A4 แนวตั้ง</option>
@@ -3399,29 +3633,42 @@ function renderMediaItems(items, context, blockId){
         ${item.title?`<div style="font-size:.85rem;color:var(--text-dim);margin-top:6px">${esc(item.title)}</div>`:""}`;
     } else if(type==="file"){
       const files = item.files||[];
-      if(item.fileDisplay==="embed"){
-        // แสดงไฟล์เอกสารเป็นพรีวิวฝังในหน้า (เลือกแนว A4 ได้ผ่าน orient)
-        bodyHtml = files.map(f=>{
-          if(LINKS_BLOCKED()) return blockedEmbedPlaceholder("เอกสารถูกปิดกั้น");
-          const id = extractDriveId(f.url||"");
-          const pv = id ? `https://drive.google.com/file/d/${id}/preview` : convertDriveToPreview(f.url||"");
-          return `<div class="file-embed-item">
+      const mode = item.fileDisplay || "preview";   // ค่าเริ่มต้น = พรีวิวอัตโนมัติบนบล็อก
+      const fileCap = item.caption ? `<div class="media-caption"${alignStyle(item.captionAlign)}>${esc(item.caption)}</div>` : "";
+      const dlCard = f=>`<div class="file-item">
+              <div class="file-icon">${getFileIcon(f.name)}</div>
+              <div class="file-name">${esc(f.name)}</div>
+              <a href="${esc(driveViewUrl(f.url))}" target="_blank" rel="noopener" class="file-open">เปิด ↗</a>
+            </div>`;
+      const embedItem = f=>{
+        if(LINKS_BLOCKED()) return blockedEmbedPlaceholder("เอกสารถูกปิดกั้น");
+        const id = extractDriveId(f.url||"");
+        const pv = id ? `https://drive.google.com/file/d/${id}/preview` : convertDriveToPreview(f.url||"");
+        return `<div class="file-embed-item">
             <div class="drive-embed"><iframe src="${esc(pv)}" loading="lazy"></iframe></div>
             <div class="file-embed-cap">
               <span class="file-embed-name">${getFileIcon(f.name)} ${esc(f.name)}</span>
               <a href="${esc(driveViewUrl(f.url))}" target="_blank" rel="noopener" class="file-open">เปิดเต็มจอ ↗</a>
             </div>
           </div>`;
-        }).join("");
-      } else {
-        bodyHtml = `<div class="file-list">
-          ${files.map(f=>`
-            <div class="file-item">
-              <div class="file-icon">${getFileIcon(f.name)}</div>
-              <div class="file-name">${esc(f.name)}</div>
+      };
+      const imgItem = f=>{
+        const s = driveImageUrl(f.url);
+        return `<div class="file-prev-item">
+            <img class="media-img" src="${esc(s)}" alt="${esc(f.name||"")}" onclick="openLightbox('${esc(s)}')" loading="lazy" onerror="${driveImgOnError(f.url)}"/>
+            <div class="file-embed-cap">
+              <span class="file-embed-name">${getFileIcon(f.name)} ${esc(f.name)}</span>
               <a href="${esc(driveViewUrl(f.url))}" target="_blank" rel="noopener" class="file-open">เปิด ↗</a>
-            </div>`).join("")}
-        </div>`;
+            </div>
+          </div>`;
+      };
+      if(mode==="list"){
+        bodyHtml = `<div class="file-list">${files.map(dlCard).join("")}</div>${fileCap}`;
+      } else if(mode==="embed"){
+        bodyHtml = files.map(embedItem).join("") + fileCap;
+      } else {
+        // พรีวิวอัตโนมัติ: รูป→แสดงรูป · เอกสาร (PDF/Office)→ฝังพรีวิว · อื่น ๆ→การ์ดดาวน์โหลด
+        bodyHtml = files.map(f=> isImageName(f.name) ? imgItem(f) : (isEmbeddableDoc(f.name) ? embedItem(f) : dlCard(f)) ).join("") + fileCap;
       }
     } else if(type==="textbox"){
       bodyHtml = `<div class="content-textbox tb-${item.style||"soft"}">
@@ -3447,7 +3694,7 @@ function renderMediaItems(items, context, blockId){
       : bodyHtml;
 
     const fitClass = (item.fit==="contain") ? " media-fit-contain" : "";
-    const orientUse = (type==="drivedoc") || (type==="file" && item.fileDisplay==="embed");
+    const orientUse = (type==="drivedoc") || (type==="file" && item.fileDisplay!=="list");
     const orientClass = (orientUse && (item.orient==="portrait"||item.orient==="landscape")) ? ` drive-${item.orient}` : "";
     return `
       <div class="media-item media-size-${size}${fitClass}${orientClass}${isAdmin?"":" view-mode"}">
@@ -3669,6 +3916,16 @@ function getFileIcon(name){
   const ext = (name||"").split(".").pop().toLowerCase();
   return {pdf:"📕",doc:"📘",docx:"📘",xls:"📗",xlsx:"📗",ppt:"📙",pptx:"📙",zip:"📦",rar:"📦",mp4:"🎬",mp3:"🎵",png:"🖼",jpg:"🖼",jpeg:"🖼",gif:"🖼"}[ext]||"📄";
 }
+// ตรวจว่าเป็นไฟล์รูปภาพ (แสดงเป็นรูปได้เลย)
+function isImageName(name){
+  const ext = (name||"").split(".").pop().toLowerCase();
+  return ["png","jpg","jpeg","gif","webp","bmp","svg","avif"].includes(ext);
+}
+// ตรวจว่าเป็นเอกสารที่ฝังพรีวิวผ่าน Google Drive ได้ (PDF/Office)
+function isEmbeddableDoc(name){
+  const ext = (name||"").split(".").pop().toLowerCase();
+  return ["pdf","doc","docx","xls","xlsx","ppt","pptx","txt","csv"].includes(ext);
+}
 
 // Carousel navigation
 const carouselState = {};
@@ -3716,6 +3973,7 @@ function openImgCaptionBulk(ctx){
   if(!icBulkData.length) icBulkData = [{title:"",caption:"",url:""}];
   renderIcBulkRows();
   $("icBulkModal").classList.add("open");
+  markClean("icBulkModal", ()=>JSON.stringify(icBulkData));
 }
 function renderIcBulkRows(){
   const box = $("icBulkRows");
@@ -3748,7 +4006,8 @@ function icBulkAddRow(){ icBulkData.push({title:"",caption:"",url:""}); renderIc
 function icBulkDel(i){ icBulkData.splice(i,1); if(!icBulkData.length) icBulkData=[{title:"",caption:"",url:""}]; renderIcBulkRows(); }
 function icDownloadTemplate(){
   try{
-    const ws = XLSX.utils.aoa_to_sheet([["หัวข้อหลัก","คำบรรยาย","URL รูป (ไม่บังคับ)"],["ตัวอย่างหัวข้อ 1","รายละเอียดภาพ 1","https://..."],["ตัวอย่างหัวข้อ 2","รายละเอียดภาพ 2",""]]);
+    const ws = XLSX.utils.aoa_to_sheet([["หัวข้อหลัก","ระบุสิ่งที่มี/สิ่งที่ทำ","คำบรรยาย","URL รูป (ไม่บังคับ)"],["ตัวอย่างหัวข้อ 1","สิ่งที่ทำ/มี (ใส่หรือเว้นว่างก็ได้)","รายละเอียดภาพ 1","https://..."],["ตัวอย่างหัวข้อ 2","","รายละเอียดภาพ 2",""]]);
+    ws["!cols"] = [{wch:30},{wch:40},{wch:50},{wch:30}];
     const wb = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(wb, ws, "captions");
     XLSX.writeFile(wb, "template_captions.xlsx");
@@ -3764,11 +4023,25 @@ function icImportXlsx(evt){
       const wb = XLSX.read(new Uint8Array(e.target.result), {type:"array"});
       const ws = wb.Sheets[wb.SheetNames[0]];
       const rows = XLSX.utils.sheet_to_json(ws, {header:1, defval:""});
+      // ระบุตำแหน่งคอลัมน์จากหัวตาราง — รองรับทั้งรูปแบบใหม่ (มีคอลัมน์ “สิ่งที่ทำ”) และเก่า (หัวข้อ|คำบรรยาย|URL)
+      const hdr = (rows[0]||[]).map(c=>String(c||"").trim());
+      const looksHeader = hdr.some(h=>/หัวข้อ|คำบรรยาย|สิ่งที่|url|รูป|title|caption/i.test(h));
+      let ti=0, ci=1, ui=2;
+      if(looksHeader){
+        const find=(re,def)=>{const i=hdr.findIndex(h=>re.test(h));return i>=0?i:def;};
+        ti = find(/หัวข้อ|title|ชื่อ/i, 0);
+        ci = find(/คำบรรยาย|caption|รายละเอียด/i, hdr.length>=4?2:1);
+        ui = find(/url|ลิงก์|รูป/i, hdr.length>=4?3:2);
+      } else {
+        // ไม่มีหัวตาราง → เดาจากจำนวนคอลัมน์: ถ้า ≥4 ถือว่ามีคอลัมน์ “สิ่งที่ทำ” คั่นที่ตำแหน่ง B
+        const w = (rows[0]||[]).length;
+        if(w>=4){ ci=2; ui=3; }
+      }
       let parsed = rows
-        .map(r=>({title:String(r[0]||"").trim(), caption:String(r[1]||"").trim(), url:String(r[2]||"").trim()}))
+        .map(r=>({title:String(r[ti]||"").trim(), caption:String(r[ci]||"").trim(), url:String(r[ui]||"").trim()}))
         .filter(r=>r.title||r.caption||r.url);
-      if(parsed.length && /^(หัวข้อ|หัวข้อหลัก|title|ชื่อ|ชื่อเรื่อง)$/i.test(parsed[0].title)) parsed = parsed.slice(1);
-      if(!parsed.length) return SW.err("ไม่พบข้อมูลในไฟล์ (คอลัมน์ A=หัวข้อ, B=คำบรรยาย, C=URL รูป)");
+      if(looksHeader) parsed = parsed.slice(1);   // ตัดแถวหัวตารางออก
+      if(!parsed.length) return SW.err("ไม่พบข้อมูลในไฟล์ (คอลัมน์ หัวข้อหลัก | สิ่งที่ทำ | คำบรรยาย | URL รูป)");
       Swal.fire({
         title:"นำเข้า "+parsed.length+" รายการ",
         text:"ต้องการเพิ่มแบบไหน?",
@@ -3777,7 +4050,7 @@ function icImportXlsx(evt){
         confirmButtonText:"แทนที่รายการเดิม",
         denyButtonText:"เพิ่มต่อท้าย",
         cancelButtonText:"ยกเลิก",
-        confirmButtonColor:"#ff6b18"
+        confirmButtonColor:THEME_ACCENT
       }).then(res=>{
         if(res.isConfirmed) icBulkData = parsed;
         else if(res.isDenied) icBulkData = [...icBulkData.filter(r=>r.title||r.caption||r.url), ...parsed];
@@ -3802,6 +4075,7 @@ function openSysCardBulk(ctx){
   if(!scBulkData.length) scBulkData = [scBlankRow()];
   renderScBulkRows();
   $("scBulkModal").classList.add("open");
+  markClean("scBulkModal", ()=>JSON.stringify(scBulkData));
 }
 function renderScBulkRows(){
   const box = $("scBulkRows");
@@ -3879,7 +4153,7 @@ function scImportXlsx(evt){
         confirmButtonText:"แทนที่รายการเดิม",
         denyButtonText:"เพิ่มต่อท้าย",
         cancelButtonText:"ยกเลิก",
-        confirmButtonColor:"#ff6b18"
+        confirmButtonColor:THEME_ACCENT
       }).then(res=>{
         if(res.isConfirmed) scBulkData = parsed;
         else if(res.isDenied) scBulkData = [...scBulkData.filter(scRowHasData), ...parsed];
@@ -3929,6 +4203,11 @@ function enterEditMode(){
   setTimeout(()=>$("pinInputs").querySelector("input").focus(),200);
 }
 function closeSettings(){
+  guardedClose("settingsOverlay",()=>$("settingsOverlay").classList.remove("open"));
+}
+// ปิดทันทีโดยไม่ตรวจ (ใช้ตอนออกจากโหมดแก้ไข ซึ่งยืนยันไปแล้ว)
+function closeSettingsForce(){
+  delete _dirtySnapshots["settingsOverlay"];
   $("settingsOverlay").classList.remove("open");
 }
 // ออกจากโหมดแก้ไข — ล็อกแอดมินใหม่ (ต้องกรอก PIN อีกครั้งเพื่อเข้า) แล้วซ่อนปุ่มแก้ไข
@@ -3937,7 +4216,7 @@ async function exitEditMode(){
   if(!ok) return;
   adminUnlocked = false;
   adminUnlockSet(false);        // ล้างสถานะปลดล็อกในแท็บ
-  closeSettings();
+  closeSettingsForce();         // ยืนยันออกแล้ว ไม่ต้องเตือนซ้ำ
   syncAdminMode();
   renderAll();                  // re-render เพื่อซ่อนปุ่มแก้ไข
   showToast("ออกจากโหมดแก้ไขแล้ว 🔒","ok");
@@ -4140,34 +4419,61 @@ function showSettingsBody(){
   $("s_faviconUrl").value = siteSettings.faviconUrl||"";
   $("s_pin").value = siteSettings.pin||"";
   $("s_blockLinks").checked = !!siteSettings.blockLinks;
+  $("s_showPart3").checked = siteSettings.showPart3 !== false;   // ค่าเริ่มต้น = แสดง
   $("s_tourMode").value = siteSettings.tourMode || "off";
+  applyTheme(siteSettings.theme || "orange");   // ซิงก์ currentThemeId กับค่าที่บันทึกไว้
+  renderThemeSwatches();                          // สร้าง/ไฮไลต์แผงคู่สี
   refreshFontSettingUI();   // อัปเดตป้ายชื่อฟอนต์ + ปุ่มคืนค่าให้ตรงกับสถานะปัจจุบัน
   $("s_welcomeText").value = siteSettings.welcomeText||"ยินดีต้อนรับคณะกรรมการผู้ประเมิน";
+  $("s_heroTitle").value = siteSettings.heroTitle!=null ? siteSettings.heroTitle : "การประเมินเพื่อ";
+  $("s_heroTitleHl").value = siteSettings.heroTitleHl!=null ? siteSettings.heroTitleHl : "คงวิทยฐานะ";
+  if($("s_systemDesc")) $("s_systemDesc").value = siteSettings.systemDesc!=null ? siteSettings.systemDesc : "";
+  if($("s_qrUrl")) $("s_qrUrl").value = siteSettings.qrUrl||"";
   $("s_committeeWelcome").value = siteSettings.committeeWelcome||"ยินดีต้อนรับคณะกรรมการ";
   $("s_committeeSub").value = siteSettings.committeeSub||"";
   renderCommitteeEditor();
   $("s_gasEndpoint").value = siteSettings.gasEndpoint||"";
   $("s_driveFolderId").value = siteSettings.driveFolderId||"";
   renderAdminIndList();
+  markClean("settingsOverlay");
 }
 
 // ---- Editor คณะกรรมการในแผงตั้งค่า ----
+// อ่านค่ากรรมการที่อยู่บนฟอร์มขณะนี้กลับมาเป็น array (ใช้ก่อน re-render เพื่อไม่ให้ค่าหาย)
+function readCommitteeForm(){
+  const rows = document.querySelectorAll("#committeeEditor .cm-edit-row");
+  const arr = [];
+  rows.forEach(row=>{
+    const i = row.dataset.idx;
+    arr.push({
+      name: ($("cm"+i+"_name")?.value||"").trim(),
+      position: ($("cm"+i+"_pos")?.value||"").replace(/\r\n/g,"\n").trim(),
+      role: ($("cm"+i+"_role")?.value||"").replace(/\r\n/g,"\n").trim(),
+      photo: ($("cm"+i+"_url")?.value||"").trim()
+    });
+  });
+  return arr;
+}
 function renderCommitteeEditor(){
   const box = $("committeeEditor");
   if(!box) return;
-  const list = Array.isArray(siteSettings.committee) ? siteSettings.committee : [];
+  let list = Array.isArray(siteSettings.committee) ? siteSettings.committee.slice() : [];
+  if(!list.length) list = [{photo:"",name:"",position:"",role:"ประธานกรรมการ"}];
   const defRole = ["ประธานกรรมการ","กรรมการ","กรรมการและเลขานุการ"];
   let html = "";
-  for(let i=0;i<3;i++){
+  for(let i=0;i<list.length;i++){
     const m = list[i] || {};
     const prev = m.photo ? `<img src="${esc(m.photo)}">` : `<span>👤</span>`;
-    html += `<div class="cm-edit-row">
+    html += `<div class="cm-edit-row" data-idx="${i}">
       <div class="cm-edit-preview" id="cmPrev${i}">${prev}</div>
       <div class="cm-edit-fields">
-        <div class="cm-edit-title">กรรมการคนที่ ${i+1}</div>
+        <div class="cm-edit-head">
+          <div class="cm-edit-title">กรรมการคนที่ ${i+1}</div>
+          <button type="button" class="cm-del-btn" title="ลบกรรมการคนนี้" onclick="removeCommittee(${i})">🗑 ลบ</button>
+        </div>
         <input id="cm${i}_name" placeholder="ชื่อ-สกุล" value="${esc(m.name||"")}"/>
-        <input id="cm${i}_pos" placeholder="ตำแหน่งในหน่วยงาน (เช่น ผู้อำนวยการสถานศึกษา)" value="${esc(m.position||"")}"/>
-        <input id="cm${i}_role" placeholder="ตำแหน่งในคณะกรรมการ (เช่น ประธานกรรมการ)" value="${esc(m.role||defRole[i]||"")}"/>
+        <textarea id="cm${i}_pos" rows="2" placeholder="ตำแหน่งในหน่วยงาน (เช่น ผู้อำนวยการสถานศึกษา) — กด Enter เพื่อขึ้นบรรทัดใหม่ได้">${esc(m.position||"")}</textarea>
+        <textarea id="cm${i}_role" rows="2" placeholder="ตำแหน่งในคณะกรรมการ (เช่น ประธานกรรมการ) — กด Enter เพื่อขึ้นบรรทัดใหม่ได้">${esc(m.role||defRole[i]||"")}</textarea>
         <div class="cm-edit-photo">
           <input id="cm${i}_url" placeholder="URL รูปภาพ" value="${esc(m.photo||"")}"/>
           <button type="button" class="btn btn-ghost btn-sm" onclick="pickCropTo(u=>setCmPhoto(${i},u),'1/1')">📤 อัปโหลด/ครอป</button>
@@ -4175,7 +4481,22 @@ function renderCommitteeEditor(){
       </div>
     </div>`;
   }
+  html += `<button type="button" class="btn btn-ghost btn-sm cm-add-btn" onclick="addCommittee()">➕ เพิ่มกรรมการ</button>`;
   box.innerHTML = html;
+}
+// เพิ่มกรรมการใหม่ 1 คน (เก็บค่าที่กรอกไว้ก่อนแล้วค่อย re-render)
+function addCommittee(){
+  const cur = readCommitteeForm();
+  cur.push({photo:"",name:"",position:"",role:""});
+  siteSettings.committee = cur;
+  renderCommitteeEditor();
+}
+// ลบกรรมการตาม index
+function removeCommittee(idx){
+  const cur = readCommitteeForm();
+  cur.splice(idx,1);
+  siteSettings.committee = cur.length ? cur : [{photo:"",name:"",position:"",role:""}];
+  renderCommitteeEditor();
 }
 function setCmPhoto(i, url){
   const inp = $("cm"+i+"_url"); if(inp) inp.value = url;
@@ -4207,16 +4528,17 @@ const _saveSettingsHandler = async()=>{
     faviconUrl: $("s_faviconUrl").value.trim(),
     pin: $("s_pin").value.trim()||"1234",
     blockLinks: $("s_blockLinks").checked,
+    showPart3: $("s_showPart3").checked,
     tourMode: $("s_tourMode").value || "off",
+    theme: currentThemeId || "orange",
     welcomeText: $("s_welcomeText").value.trim()||"ยินดีต้อนรับคณะกรรมการผู้ประเมิน",
+    heroTitle: $("s_heroTitle").value.trim(),
+    heroTitleHl: $("s_heroTitleHl").value.trim(),
+    systemDesc: ($("s_systemDesc")?.value||"").trim(),
+    qrUrl: ($("s_qrUrl")?.value||"").trim(),
     committeeWelcome: $("s_committeeWelcome").value.trim()||"ยินดีต้อนรับคณะกรรมการ",
     committeeSub: $("s_committeeSub").value.trim(),
-    committee: [0,1,2].map(i=>({
-      name: ($("cm"+i+"_name")?.value||"").trim(),
-      position: ($("cm"+i+"_pos")?.value||"").trim(),
-      role: ($("cm"+i+"_role")?.value||"").trim(),
-      photo: ($("cm"+i+"_url")?.value||"").trim()
-    })),
+    committee: readCommitteeForm(),
     gasEndpoint: $("s_gasEndpoint").value.trim(),
     driveFolderId: $("s_driveFolderId").value.trim(),
     updatedAt: firebase.firestore.Timestamp.now()
@@ -4228,6 +4550,7 @@ const _saveSettingsHandler = async()=>{
     applySiteSettings();
     renderCommittee();
     renderAll();   // รีเฟรชเนื้อหาทั้งหมด (โหมดปิดกั้น/รูปโปรไฟล์ ฯลฯ)
+    markClean("settingsOverlay");   // อัปเดต baseline หลังบันทึกสำเร็จ
     Swal.close();
     SW.ok("บันทึกแล้ว");
   }catch(e){ Swal.close(); SW.err("บันทึกไม่สำเร็จ",e.message); }
@@ -4424,7 +4747,11 @@ async function exportReportDocx(){
 
     // ---------- สารบัญหัวข้อ ----------
     body.push(heading("สารบัญ",1));
-    ["ส่วนที่ 1 ผลการปฏิบัติงานตามมาตรฐานตำแหน่ง","ส่วนที่ 2 ประเด็นท้าทาย","ส่วนที่ 3 การจัดการเรียนรู้ (คลิปการสอน)","ภาคผนวก: ประวัติและภาระงานที่ ก.จ. กำหนด"]
+    const _showP3 = siteSettings.showPart3 !== false;   // รวมส่วนที่ 3 ในเล่มเฉพาะเมื่อเปิดแสดง
+    [ "ส่วนที่ 1 ผลการปฏิบัติงานตามมาตรฐานตำแหน่ง",
+      "ส่วนที่ 2 ประเด็นท้าทาย",
+      ...(_showP3 ? ["ส่วนที่ 3 การจัดการเรียนรู้ (คลิปการสอน)"] : []),
+      "ภาคผนวก: ประวัติและภาระงานที่ ก.จ. กำหนด" ]
       .forEach(t=> body.push(new Paragraph({children:[run(t)], spacing:{after:60}, bullet:{level:0}})));
     body.push(new Paragraph({children:[new PageBreak()]}));
 
@@ -4452,12 +4779,14 @@ async function exportReportDocx(){
     (await mediaToParas(challengeData.mediaItems)).forEach(p=>body.push(p));
     body.push(new Paragraph({children:[new PageBreak()]}));
 
-    // ---------- ส่วนที่ 3 ----------
-    body.push(heading("ส่วนที่ 3 การจัดการเรียนรู้ (คลิปการสอน)",1));
-    if(clipsData.title) body.push(heading(clipsData.title,3));
-    if(clipsData.desc) richToParas(clipsData.desc).forEach(p=>body.push(p));
-    (await mediaToParas(clipsData.mediaItems)).forEach(p=>body.push(p));
-    body.push(new Paragraph({children:[new PageBreak()]}));
+    // ---------- ส่วนที่ 3 (เฉพาะเมื่อเปิดแสดงส่วนที่ 3) ----------
+    if(_showP3){
+      body.push(heading("ส่วนที่ 3 การจัดการเรียนรู้ (คลิปการสอน)",1));
+      if(clipsData.title) body.push(heading(clipsData.title,3));
+      if(clipsData.desc) richToParas(clipsData.desc).forEach(p=>body.push(p));
+      (await mediaToParas(clipsData.mediaItems)).forEach(p=>body.push(p));
+      body.push(new Paragraph({children:[new PageBreak()]}));
+    }
 
     // ---------- ภาคผนวก: ประวัติและภาระงาน ----------
     body.push(heading("ภาคผนวก: ประวัติและภาระงานที่ ก.จ. กำหนด",1));
@@ -4485,6 +4814,129 @@ async function exportReportDocx(){
   }catch(e){ Swal.close(); SW.err("ส่งออกไม่สำเร็จ", e.message); }
 }
 $("exportReportBtn").onclick = exportReportDocx;
+
+// ============================================================
+// 🔳 QR DOCUMENT — เอกสาร A4 แนวตั้ง (โลโก้ + QR + ชื่อระบบ + คำอธิบาย + ตกแต่งมุมตามธีม)
+// ============================================================
+// แปลงรูป (โลโก้) เป็น data URL เพื่อให้หน้าต่างใหม่/พิมพ์แสดงได้แน่นอน (ลองหลาย endpoint เผื่อ CORS)
+async function _imgToDataUrl(rawUrl){
+  if(!rawUrl) return "";
+  const id = (typeof extractDriveId==="function") ? extractDriveId(rawUrl) : "";
+  const candidates = id
+    ? [`https://lh3.googleusercontent.com/d/${id}=w600`, `https://drive.google.com/thumbnail?id=${id}&sz=w600`, rawUrl]
+    : [rawUrl];
+  for(const u of candidates){
+    try{
+      const res = await fetch(u, {mode:"cors"});
+      if(!res.ok) continue;
+      const blob = await res.blob();
+      if(!/^image\//.test(blob.type||"")) continue;
+      return await new Promise(r=>{ const fr=new FileReader(); fr.onload=()=>r(fr.result); fr.onerror=()=>r(""); fr.readAsDataURL(blob); });
+    }catch(e){/* ลองตัวถัดไป */}
+  }
+  return "";
+}
+async function makeQrDoc(){
+  try{
+    SW.loading("กำลังสร้างเอกสาร QR code...");
+    await ensureReportLibs();             // โหลดไลบรารี qrcode (ใช้ร่วมกับเล่มรายงาน)
+    const s = siteSettings;
+    // ลิงก์ที่จะฝังใน QR: ใช้ค่าที่ตั้งไว้ หรือ URL หน้านี้ (ตัด hash ออก)
+    const url = (s.qrUrl||"").trim() || (location.origin + location.pathname);
+    // สร้าง QR เป็น data URL (GIF)
+    const qr = window.qrcode(0, "M"); qr.addData(url); qr.make();
+    const qrImg = qr.createDataURL(10, 12);
+    // อ่านสีธีมปัจจุบันจาก CSS variable เพื่อให้เอกสารตรงกับเว็บ
+    const cs = getComputedStyle(document.documentElement);
+    const accent  = (cs.getPropertyValue("--accent")||"#ff6b18").trim();
+    const accent2 = (cs.getPropertyValue("--accent-2")||accent).trim();
+    const accent3 = (cs.getPropertyValue("--accent-3")||accent).trim();
+    // โลโก้ → data url (ถ้ามี)
+    const logo = await _imgToDataUrl(s.logoUrl||"");
+    // เนื้อหาข้อความ
+    const sysName = ((s.heroTitle!=null?s.heroTitle:"การประเมินเพื่อ") + (s.heroTitleHl!=null?s.heroTitleHl:"คงวิทยฐานะ")).trim() || "ระบบแสดงผลการประเมิน";
+    const owner   = (s.name||"").trim();
+    const school  = (s.school||"").trim();
+    const desc    = (s.systemDesc||"").trim();
+    const ownerLine = owner ? `ของ ${owner}` : "";
+    Swal.close();
+
+    const E = (t)=>String(t==null?"":t).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+    const logoHtml = logo
+      ? `<img class="logo" src="${logo}" alt="logo"/>`
+      : `<div class="logo logo-ph">🏫</div>`;
+    const html = `<!DOCTYPE html><html lang="th"><head><meta charset="utf-8">
+<title>QR ${E(sysName)}</title>
+<style>
+  @page { size: A4 portrait; margin: 0; }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{font-family:'Kanit','Sarabun','Segoe UI',sans-serif;color:#1f2430;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .page{position:relative;width:210mm;min-height:297mm;margin:0 auto;background:#fff;
+        padding:30mm 22mm;display:flex;flex-direction:column;align-items:center;overflow:hidden}
+  /* ── ตกแต่งมุมกระดาษด้วยสีธีม ── */
+  .corner{position:absolute;width:46mm;height:46mm;border:5mm solid ${accent};z-index:0}
+  .corner.tl{top:10mm;left:10mm;border-right:none;border-bottom:none;border-top-left-radius:8mm}
+  .corner.tr{top:10mm;right:10mm;border-left:none;border-bottom:none;border-top-right-radius:8mm;border-color:${accent2}}
+  .corner.bl{bottom:10mm;left:10mm;border-right:none;border-top:none;border-bottom-left-radius:8mm;border-color:${accent2}}
+  .corner.br{bottom:10mm;right:10mm;border-left:none;border-top:none;border-bottom-right-radius:8mm}
+  .corner-dot{position:absolute;width:7mm;height:7mm;border-radius:50%;z-index:0}
+  .corner-dot.d1{top:14mm;right:64mm;background:${accent3}}
+  .corner-dot.d2{bottom:14mm;left:64mm;background:${accent3}}
+  .content{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;width:100%}
+  .logo{width:42mm;height:42mm;object-fit:contain;border-radius:50%;border:1.5mm solid ${accent};
+        box-shadow:0 4mm 12mm rgba(0,0,0,.12);background:#fff;padding:2mm}
+  .logo-ph{display:flex;align-items:center;justify-content:center;font-size:22mm;background:linear-gradient(135deg,${accent},${accent2});color:#fff}
+  .kicker{margin-top:9mm;font-size:5.2mm;letter-spacing:.5mm;color:${accent};font-weight:700}
+  .qr-frame{margin-top:8mm;padding:6mm;border:1mm solid ${accent};border-radius:6mm;
+            box-shadow:0 5mm 16mm rgba(0,0,0,.10);background:#fff}
+  .qr-frame img{display:block;width:78mm;height:78mm;image-rendering:pixelated}
+  .scan-hint{margin-top:5mm;font-size:4.4mm;color:#6b7280}
+  .sys-name{margin-top:10mm;font-size:9mm;line-height:1.3;font-weight:800;text-align:center;color:#1f2430;max-width:150mm}
+  .sys-name .hl{color:${accent}}
+  .owner{margin-top:3mm;font-size:6mm;font-weight:600;text-align:center;color:#374151}
+  .school{margin-top:1.5mm;font-size:5mm;text-align:center;color:#6b7280}
+  .desc{margin-top:9mm;font-size:5mm;line-height:1.85;text-align:center;color:#3b4252;max-width:150mm;
+        border-top:.4mm solid #e5e7eb;padding-top:8mm}
+  .url{margin-top:7mm;font-size:4mm;color:${accent};word-break:break-all;text-align:center;max-width:150mm}
+  @media screen { body{background:#f1f1f4;padding:10mm 0} .page{box-shadow:0 10px 40px rgba(0,0,0,.18)} }
+  .toolbar{position:fixed;top:12px;right:12px;z-index:99;display:flex;gap:8px}
+  .toolbar button{font-family:inherit;font-size:14px;font-weight:700;border:none;border-radius:9px;
+                  padding:10px 18px;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.2)}
+  .btn-print{background:${accent};color:#fff}
+  .btn-close{background:#e5e7eb;color:#374151}
+  @media print { .toolbar{display:none!important} }
+</style></head>
+<body>
+  <div class="toolbar">
+    <button class="btn-print" onclick="window.print()">🖨 พิมพ์ / บันทึก PDF</button>
+    <button class="btn-close" onclick="window.close()">ปิด</button>
+  </div>
+  <div class="page">
+    <div class="corner tl"></div><div class="corner tr"></div>
+    <div class="corner bl"></div><div class="corner br"></div>
+    <div class="corner-dot d1"></div><div class="corner-dot d2"></div>
+    <div class="content">
+      ${logoHtml}
+      <div class="kicker">📋 ระบบแสดงผลการประเมิน</div>
+      <div class="qr-frame"><img src="${qrImg}" alt="QR code"/></div>
+      <div class="scan-hint">สแกน QR code เพื่อเข้าชมเว็บไซต์</div>
+      <div class="sys-name">${E(s.heroTitle!=null?s.heroTitle:"การประเมินเพื่อ")}<span class="hl">${E(s.heroTitleHl!=null?s.heroTitleHl:"คงวิทยฐานะ")}</span></div>
+      ${ownerLine?`<div class="owner">${E(ownerLine)}</div>`:""}
+      ${school?`<div class="school">${E(school)}</div>`:""}
+      ${desc?`<div class="desc">${E(desc)}</div>`:""}
+      <div class="url">${E(url)}</div>
+    </div>
+  </div>
+</body></html>`;
+
+    const w = window.open("", "_blank");
+    if(!w){ SW.err("เปิดหน้าต่างไม่ได้","กรุณาอนุญาต pop-up สำหรับเว็บไซต์นี้ แล้วลองใหม่"); return; }
+    w.document.open(); w.document.write(html); w.document.close();
+    SW.ok("สร้างเอกสาร QR code แล้ว 🔳");
+  }catch(e){ Swal.close(); SW.err("สร้างเอกสารไม่สำเร็จ", e.message); }
+}
+$("makeQrDocBtn").onclick = makeQrDoc;
 
 // ============================================================
 // WELCOME ANIMATION — Typewriter + Vertical Ticker
@@ -4732,10 +5184,11 @@ $("importExcelFile").addEventListener("change",async function(){
       const dim = parseInt(r["ด้าน"])||1;
       const order = parseInt(r["ลำดับ"])||1;
       const title = String(r["ชื่อตัวชี้วัด"]||"").trim();
+      const doing = String(r["ระบุสิ่งที่มี/สิ่งที่ทำ"]||r["สิ่งที่มี/สิ่งที่ทำ"]||r["สิ่งที่ทำ"]||r["ระบุสิ่งที่ทำ"]||"").trim();
       const desc = String(r["คำบรรยาย"]||"").trim();
       if(!title) return;
       const ref = db.collection("indicators").doc();
-      const item = {dim,order,title,desc,mediaItems:[],createdAt:firebase.firestore.Timestamp.now()};
+      const item = {dim,order,title,doing,desc,mediaItems:[],createdAt:firebase.firestore.Timestamp.now()};
       batch.set(ref,item);
       newItems.push({id:ref.id,...item});
     });
@@ -4752,8 +5205,8 @@ function downloadTemplate(){
   // สร้าง CSV เสมอ (รองรับทุก environment, ไม่ต้องพึ่ง XLSX library)
   const BOM = "\ufeff"; // UTF-8 BOM ให้ Excel เปิดภาษาไทยถูก
   const rows = [
-    ["ด้าน","ลำดับ","ชื่อตัวชี้วัด","คำบรรยาย"],
-    ...DEFAULT_INDICATORS.map(i=>[i.dim, i.order, i.title, ""])
+    ["ด้าน","ลำดับ","ชื่อตัวชี้วัด","ระบุสิ่งที่มี/สิ่งที่ทำ","คำบรรยาย"],
+    ...DEFAULT_INDICATORS.map(i=>[i.dim, i.order, i.title, "", ""])
   ];
   const csv = BOM + rows.map(r => r.map(v=>`"${String(v).replace(/"/g,'""')}"`).join(",")).join("\r\n");
 
@@ -4761,7 +5214,7 @@ function downloadTemplate(){
   try{
     if(typeof XLSX !== "undefined"){
       const ws = XLSX.utils.aoa_to_sheet(rows);
-      ws["!cols"] = [{wch:6},{wch:8},{wch:54},{wch:60}];
+      ws["!cols"] = [{wch:6},{wch:8},{wch:54},{wch:46},{wch:60}];
       const wb = XLSX.utils.book_new();
       XLSX.utils.book_append_sheet(wb,"ตัวชี้วัด",ws);
       XLSX.writeFile(wb,"template_indicators.xlsx");
@@ -4783,6 +5236,99 @@ function downloadTemplate(){
 }
 
 // ============================================================
+// 🤖 MASTER PROMPT GENERATOR — คัดลอกพรอมป์สำเร็จรูปส่งให้ AI ร่างคำบรรยาย
+// ============================================================
+async function _copyToClipboard(text){
+  try{
+    if(navigator.clipboard && window.isSecureContext){ await navigator.clipboard.writeText(text); return true; }
+  }catch(e){}
+  // fallback สำหรับเบราว์เซอร์เก่า/บริบทไม่ปลอดภัย
+  try{
+    const ta=document.createElement("textarea");
+    ta.value=text; ta.style.position="fixed"; ta.style.opacity="0"; ta.style.top="0";
+    document.body.appendChild(ta); ta.focus(); ta.select();
+    const ok=document.execCommand("copy"); document.body.removeChild(ta); return ok;
+  }catch(e){ return false; }
+}
+
+const MASTER_PROMPT_INDICATOR =
+`คุณคือผู้ช่วยร่าง “คำบรรยายผลการปฏิบัติงาน” เชิงวิชาการ สำหรับแฟ้มประเมินเพื่อคงวิทยฐานะของข้าราชการครู (สังกัด อปท.)
+
+ฉันจะแนบไฟล์ตาราง (.csv หรือ .xlsx) ที่มีคอลัมน์เรียงตามนี้:
+ด้าน | ลำดับ | ชื่อตัวชี้วัด | ระบุสิ่งที่มี/สิ่งที่ทำ | คำบรรยาย
+
+ภารกิจของคุณ:
+1) อ่านไฟล์ให้ครบทุกแถว แล้วเขียน “คำบรรยายผลการปฏิบัติงาน” ลงในคอลัมน์ “คำบรรยาย” ของแต่ละแถว
+2) ใช้ข้อความในคอลัมน์ “ระบุสิ่งที่มี/สิ่งที่ทำ” เป็นวัตถุดิบหลัก เรียบเรียงให้เป็นภาษาราชการ/วิชาการ กระชับ เป็นทางการ น่าเชื่อถือ
+3) หากแถวใดไม่มีข้อมูลในคอลัมน์ “ระบุสิ่งที่มี/สิ่งที่ทำ” ให้คุณคิดและร่างคำบรรยายที่สอดคล้องกับ “ชื่อตัวชี้วัด” และบริบทการทำงานของครูให้เหมาะสมเอง
+4) แต่ละคำบรรยายยาวประมาณ 3–6 ประโยค สื่อให้เห็น (ก) สิ่งที่ครูได้ดำเนินการ (ข) วิธีการ/กระบวนการ (ค) ผลที่เกิดกับผู้เรียนหรือสถานศึกษา โดยอ้างอิงเหตุผลตามหลักการ ไม่กล่าวเกินจริง
+5) ใช้สำนวนเชิงวิชาการ เช่น “ได้ดำเนินการ…”, “โดยมุ่งเน้น…”, “ส่งผลให้ผู้เรียน…”, “สอดคล้องกับ…” หลีกเลี่ยงคำลำลองและการใช้สรรพนามบุรุษที่หนึ่ง
+
+ข้อกำหนดผลลัพธ์ (สำคัญมาก):
+- คงคอลัมน์เดิมทั้งหมดและลำดับเดิม (ด้าน | ลำดับ | ชื่อตัวชี้วัด | ระบุสิ่งที่มี/สิ่งที่ทำ | คำบรรยาย) เติมเฉพาะคอลัมน์ “คำบรรยาย”
+- ห้ามเปลี่ยนหัวคอลัมน์ เพื่อให้นำไฟล์กลับเข้าระบบได้ทันที
+- บันทึกผลเป็นไฟล์ .csv เข้ารหัส UTF-8 (มี BOM) แล้วให้ลิงก์ดาวน์โหลด`;
+
+const MASTER_PROMPT_CAPTION =
+`คุณคือผู้ช่วยร่าง “คำบรรยายภาพประกอบ” เชิงวิชาการ สำหรับแฟ้มประเมินเพื่อคงวิทยฐานะของข้าราชการครู
+
+ฉันจะแนบไฟล์ตาราง (.csv หรือ .xlsx) ที่มีคอลัมน์เรียงตามนี้:
+หัวข้อหลัก | ระบุสิ่งที่มี/สิ่งที่ทำ | คำบรรยาย | URL รูป (ไม่บังคับ)
+
+ภารกิจของคุณ:
+1) อ่านไฟล์ให้ครบทุกแถว แล้วเขียน “คำบรรยาย” ใต้ภาพลงในคอลัมน์ “คำบรรยาย”
+2) ใช้ข้อความในคอลัมน์ “ระบุสิ่งที่มี/สิ่งที่ทำ” เป็นวัตถุดิบ เรียบเรียงเป็นภาษาวิชาการ กระชับ สื่อความหมายชัดเจน
+3) หากแถวใดไม่มีข้อมูล ให้คิดคำบรรยายจาก “หัวข้อหลัก” ให้เหมาะสมกับบริบทการปฏิบัติงานของครู
+4) คำบรรยายยาวประมาณ 1–3 ประโยค ระบุว่าภาพแสดงอะไร และเชื่อมโยงกับการปฏิบัติงาน/ผลที่เกิดขึ้นอย่างไร
+5) ใช้สำนวนเชิงวิชาการ หลีกเลี่ยงคำลำลอง
+
+ข้อกำหนดผลลัพธ์ (สำคัญมาก):
+- คงคอลัมน์เดิมทั้งหมดและลำดับเดิม (หัวข้อหลัก | ระบุสิ่งที่มี/สิ่งที่ทำ | คำบรรยาย | URL รูป) เติมเฉพาะคอลัมน์ “คำบรรยาย”
+- ห้ามเปลี่ยนหัวคอลัมน์ เพื่อให้นำไฟล์กลับเข้าระบบได้ทันที
+- บันทึกผลเป็นไฟล์ .csv เข้ารหัส UTF-8 (มี BOM) แล้วให้ลิงก์ดาวน์โหลด`;
+
+// เปิด modal แสดงพรอมป์: มีข้อความเต็ม + ปุ่มคัดลอก + ปุ่มลิงก์ไป AI (ChatGPT / Gemini / Claude)
+let _promptModalText = "";
+function _copyPromptFromModal(){
+  _copyToClipboard(_promptModalText).then(ok=>{
+    const btn = document.getElementById("promptCopyBtn");
+    if(btn){
+      const old = btn.innerHTML;
+      btn.innerHTML = ok ? "✓ คัดลอกแล้ว" : "⚠ คัดลอกไม่ได้ — เลือกข้อความเอง";
+      btn.style.background = ok ? "#16a34a" : "#dc2626";
+      setTimeout(()=>{ btn.innerHTML = old; btn.style.background = ""; }, 1800);
+    }
+  });
+}
+function showPromptModal(text, subtitle){
+  _promptModalText = text || "";
+  const esc2 = (t)=>String(t==null?"":t).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+  const html = `
+    <div style="text-align:left">
+      ${subtitle?`<div style="font-size:.88rem;color:#555;line-height:1.7;margin-bottom:10px">${subtitle}</div>`:""}
+      <textarea id="promptModalTa" readonly style="width:100%;height:230px;font-size:.8rem;line-height:1.6;padding:12px;border:1px solid #ddd;border-radius:10px;background:#fafafa;color:#222;resize:vertical;font-family:inherit">${esc2(text)}</textarea>
+      <button type="button" id="promptCopyBtn" onclick="_copyPromptFromModal()"
+        style="width:100%;margin-top:10px;padding:12px;border:none;border-radius:10px;background:${THEME_ACCENT};color:#fff;font-family:inherit;font-weight:700;font-size:.95rem;cursor:pointer">📋 คัดลอกพรอมป์</button>
+      <div style="margin-top:14px;font-size:.82rem;color:#777;font-weight:600">เปิด AI เพื่อวางพรอมป์ (พร้อมแนบไฟล์):</div>
+      <div style="display:flex;gap:8px;margin-top:8px;flex-wrap:wrap">
+        <a href="https://chatgpt.com/" target="_blank" rel="noopener" class="ai-link-btn" style="flex:1;min-width:96px;display:flex;align-items:center;justify-content:center;gap:6px;padding:11px 8px;border:1px solid #10a37f;border-radius:10px;background:#10a37f;color:#fff;text-decoration:none;font-weight:700;font-size:.85rem">🤖 ChatGPT</a>
+        <a href="https://gemini.google.com/app" target="_blank" rel="noopener" class="ai-link-btn" style="flex:1;min-width:96px;display:flex;align-items:center;justify-content:center;gap:6px;padding:11px 8px;border:1px solid #1a73e8;border-radius:10px;background:#1a73e8;color:#fff;text-decoration:none;font-weight:700;font-size:.85rem">✦ Gemini</a>
+        <a href="https://claude.ai/new" target="_blank" rel="noopener" class="ai-link-btn" style="flex:1;min-width:96px;display:flex;align-items:center;justify-content:center;gap:6px;padding:11px 8px;border:1px solid #d97757;border-radius:10px;background:#d97757;color:#fff;text-decoration:none;font-weight:700;font-size:.85rem">✳ Claude</a>
+      </div>
+    </div>`;
+  Swal.fire({
+    title:"🤖 Master Prompt สำหรับ AI",
+    html, width:640, showConfirmButton:true, confirmButtonText:"ปิด", confirmButtonColor:THEME_ACCENT
+  });
+}
+function copyIndicatorPrompt(){
+  showPromptModal(MASTER_PROMPT_INDICATOR, "คัดลอกพรอมป์นี้ไปวางใน AI พร้อม<strong>แนบไฟล์ template ที่กรอก “สิ่งที่ทำ” แล้ว</strong> — AI จะร่าง “คำบรรยาย” คืนเป็นไฟล์ให้นำกลับเข้าระบบได้ทันที");
+}
+function copyCaptionPrompt(){
+  showPromptModal(MASTER_PROMPT_CAPTION, "คัดลอกพรอมป์นี้ไปวางใน AI พร้อม<strong>แนบไฟล์ภาพ+คำบรรยายที่กรอกแล้ว</strong> — AI จะช่วยร่าง “คำบรรยาย” ให้");
+}
+
+// ============================================================
 // HISTORY EDITOR
 // ============================================================
 function openHistoryEditor(openPane){
@@ -4798,8 +5344,9 @@ function openHistoryEditor(openPane){
   const targetPane = (openPane==='pa1') ? 'hist-pa1' : 'hist-content';
   document.querySelectorAll("#histEditorOverlay .modal-tab").forEach(t=>t.classList.toggle("active", t.dataset.pane===targetPane));
   document.querySelectorAll("#histEditorOverlay .modal-pane").forEach(p=>p.classList.toggle("active", p.dataset.pane===targetPane));
+  markClean("histEditorOverlay");
 }
-$("histEditorClose").onclick = ()=>{$("histEditorOverlay").classList.remove("open");currentEditMediaIdx=null;};
+$("histEditorClose").onclick = ()=>guardedClose("histEditorOverlay",()=>{$("histEditorOverlay").classList.remove("open");currentEditMediaIdx=null;});
 $("saveHistoryBtn").onclick = async()=>{
   SW.loading("กำลังบันทึก...");
   try{
@@ -4815,6 +5362,7 @@ $("saveHistoryBtn").onclick = async()=>{
       mediaItems:historyData.mediaItems||[]
     },{merge:true});
     Swal.close(); SW.ok("บันทึกแล้ว");
+    markClean("histEditorOverlay");   // อัปเดต baseline หลังบันทึกสำเร็จ
     renderHistory();
   }catch(e){Swal.close();SW.err("บันทึกไม่สำเร็จ",e.message);}
 };
@@ -4831,8 +5379,9 @@ function openChallengeEditor(){
   $("challengeEditorOverlay").classList.add("open");
   document.querySelectorAll("#challengeEditorOverlay .modal-tab").forEach((t,i)=>t.classList.toggle("active",i===0));
   document.querySelectorAll("#challengeEditorOverlay .modal-pane").forEach((p,i)=>p.classList.toggle("active",i===0));
+  markClean("challengeEditorOverlay");
 }
-$("challengeEditorClose").onclick = ()=>{$("challengeEditorOverlay").classList.remove("open");currentEditMediaIdx=null;};
+$("challengeEditorClose").onclick = ()=>guardedClose("challengeEditorOverlay",()=>{$("challengeEditorOverlay").classList.remove("open");currentEditMediaIdx=null;});
 $("saveChallengeBtn").onclick = async()=>{
   SW.loading("กำลังบันทึก...");
   try{
@@ -4844,6 +5393,7 @@ $("saveChallengeBtn").onclick = async()=>{
       mediaItems:challengeData.mediaItems||[]
     },{merge:true});
     Swal.close(); SW.ok("บันทึกแล้ว");
+    markClean("challengeEditorOverlay");
     renderChallenge();
   }catch(e){Swal.close();SW.err("บันทึกไม่สำเร็จ",e.message);}
 };
@@ -4860,8 +5410,9 @@ function openClipsEditor(){
   $("clipsEditorOverlay").classList.add("open");
   document.querySelectorAll("#clipsEditorOverlay .modal-tab").forEach((t,i)=>t.classList.toggle("active",i===0));
   document.querySelectorAll("#clipsEditorOverlay .modal-pane").forEach((p,i)=>p.classList.toggle("active",i===0));
+  markClean("clipsEditorOverlay");
 }
-$("clipsEditorClose").onclick = ()=>{$("clipsEditorOverlay").classList.remove("open");currentEditMediaIdx=null;};
+$("clipsEditorClose").onclick = ()=>guardedClose("clipsEditorOverlay",()=>{$("clipsEditorOverlay").classList.remove("open");currentEditMediaIdx=null;});
 $("saveClipsBtn").onclick = async()=>{
   SW.loading("กำลังบันทึก...");
   try{
@@ -4873,6 +5424,7 @@ $("saveClipsBtn").onclick = async()=>{
       mediaItems:clipsData.mediaItems||[]
     },{merge:true});
     Swal.close(); SW.ok("บันทึกแล้ว");
+    markClean("clipsEditorOverlay");
     renderClips();
   }catch(e){Swal.close();SW.err("บันทึกไม่สำเร็จ",e.message);}
 };
@@ -4903,8 +5455,9 @@ function openIndEditor(id){
       document.querySelectorAll("#indEditorOverlay .modal-pane").forEach(p=>p.classList.toggle("active",p.dataset.pane===btn.dataset.pane));
     };
   });
+  markClean("indEditorOverlay");
 }
-$("indEditorClose").onclick = ()=>{$("indEditorOverlay").classList.remove("open");currentEditBlockId=null;currentEditMediaIdx=null;};
+$("indEditorClose").onclick = ()=>guardedClose("indEditorOverlay",()=>{$("indEditorOverlay").classList.remove("open");currentEditBlockId=null;currentEditMediaIdx=null;});
 $("saveIndDescBtn").onclick = async()=>{
   const id = $("editingBlockId").value;
   const desc = $("editIndDesc").value;
@@ -4914,6 +5467,7 @@ $("saveIndDescBtn").onclick = async()=>{
     const ind = allIndicators.find(i=>i.id===id);
     if(ind) ind.desc = desc;
     Swal.close(); SW.ok("บันทึกแล้ว");
+    markClean("indEditorOverlay");
     renderIndicators();
   }catch(e){Swal.close();SW.err("บันทึกไม่สำเร็จ",e.message);}
 };
@@ -5089,7 +5643,8 @@ function openMediaForm(type, ctx, existing){
         </label>
       </div>
       <div id="mf_fileList" style="margin:8px 0"></div>
-      <div class="field-note">อัปโหลดไฟล์ให้เสร็จก่อน แล้วกด "บันทึกไฟล์" เพื่อให้แสดงบนหน้าเว็บ<br>💡 บันทึกแล้วเลือกที่แถบหัวบล็อกได้ว่าจะแสดงเป็น <b>รายการดาวน์โหลด</b> หรือ <b>พรีวิวฝังในหน้า</b> (เอกสาร เช่น PDF/Word พร้อมเลือกแนว A4 ตั้ง/นอน)</div>
+      <div class="field"><label>คำบรรยายไฟล์ (optional)</label><input id="mf_fileCaption" placeholder="คำบรรยายที่จะแสดงใต้ไฟล์/พรีวิว..."/></div>
+      <div class="field-note">ค่าเริ่มต้นจะแสดงเป็น <b>พรีวิวอัตโนมัติบนบล็อกนี้เลย</b> (รูป→แสดงรูป · PDF/Word/Excel→ฝังพรีวิว · ไฟล์อื่น→ปุ่มดาวน์โหลด) — เปลี่ยนรูปแบบได้ที่แถบหัวบล็อกหลังบันทึก (รายการดาวน์โหลด / ฝังพรีวิวทั้งหมด พร้อมเลือกแนว A4 ตั้ง-นอน)</div>
       <button class="btn btn-primary btn-sm" style="margin-top:8px" onclick="saveMediaItem('file','${context}')">💾 บันทึกไฟล์</button>`;
   } else if(type==="textbox"){
     html = `
@@ -5184,6 +5739,7 @@ function openMediaForm(type, ctx, existing){
     else if(type==="drivedoc"){ setVal("mf_driveUrl",existing.url); setVal("mf_driveTitle",existing.title); }
     else if(type==="file"){
       fileUploadList = (existing.files||[]).map(f=>({name:f.name,url:f.url}));
+      setVal("mf_fileCaption", existing.caption);
       const listEl=$("mf_fileList");
       if(listEl) listEl.innerHTML = fileUploadList.map(f=>`
         <div style="display:flex;align-items:center;gap:8px;padding:6px 10px;background:#fff;border:1px solid var(--line);border-radius:8px;font-size:.85rem;margin-bottom:4px">
@@ -5443,7 +5999,9 @@ async function saveMediaItem(type, context){
       item = {type:"drivedoc",url,title:($("mf_driveTitle")||{}).value.trim()};
     } else if(type==="file"){
       if(!fileUploadList.length) return SW.err("กรุณาอัปโหลดไฟล์ก่อน");
-      item = {type:"file",files:fileUploadList.filter(f=>f.url)};
+      item = {type:"file",files:fileUploadList.filter(f=>f.url),caption:($("mf_fileCaption")||{}).value?.trim()||""};
+      // บล็อกใหม่ = พรีวิวอัตโนมัติ · ตอนแก้ไขปล่อยว่างไว้ให้โค้ดด้านล่างคงค่ารูปแบบเดิม
+      if(currentEditMediaIdx==null) item.fileDisplay = "preview";
     } else if(type==="textbox"){
       const text = ($("mf_tbText")||{}).value.trim();
       const title = ($("mf_tbTitle")||{}).value.trim();
@@ -5765,7 +6323,7 @@ $("cropClose").onclick = ()=>{
   if(cropperInst){cropperInst.destroy();cropperInst=null;}
 };
 // ---- Bulk image+caption: บันทึก/ปิด ----
-$("icBulkClose").onclick = ()=>$("icBulkModal").classList.remove("open");
+$("icBulkClose").onclick = ()=>guardedClose("icBulkModal",()=>$("icBulkModal").classList.remove("open"),()=>JSON.stringify(icBulkData));
 $("icBulkSave").onclick = async()=>{
   const rows = icBulkData.filter(r=>(r.title&&r.title.trim())||(r.caption&&r.caption.trim())||(r.url&&r.url.trim()));
   if(!rows.length) return SW.err("ยังไม่มีข้อมูล","กรอกหัวข้อหรือคำบรรยายอย่างน้อย 1 แถว");
@@ -5793,12 +6351,12 @@ $("icBulkSave").onclick = async()=>{
       clipsData.mediaItems=arr; renderClips();
     } else { throw new Error("ไม่ทราบบริบท"); }
     Swal.close(); SW.ok("สร้าง "+items.length+" บล็อกแล้ว");
-    icBulkData=[]; $("icBulkModal").classList.remove("open");
+    icBulkData=[]; delete _dirtySnapshots["icBulkModal"]; $("icBulkModal").classList.remove("open");
   }catch(e){ Swal.close(); SW.err("บันทึกไม่สำเร็จ", e.message); }
 };
 
 // ---- Bulk syscard (Card ลิงก์ระบบ): บันทึก/ปิด ----
-$("scBulkClose").onclick = ()=>$("scBulkModal").classList.remove("open");
+$("scBulkClose").onclick = ()=>guardedClose("scBulkModal",()=>$("scBulkModal").classList.remove("open"),()=>JSON.stringify(scBulkData));
 $("scBulkSave").onclick = async()=>{
   const rows = scBulkData.filter(scRowHasData);
   if(!rows.length) return SW.err("ยังไม่มีข้อมูล","กรอกชื่อระบบหรือลิงก์อย่างน้อย 1 แถว");
@@ -5838,7 +6396,7 @@ $("scBulkSave").onclick = async()=>{
       clipsData.mediaItems=arr; renderClips();
     } else { throw new Error("ไม่ทราบบริบท"); }
     Swal.close(); SW.ok("สร้าง "+items.length+" Card ลิงก์ระบบแล้ว");
-    scBulkData=[]; $("scBulkModal").classList.remove("open");
+    scBulkData=[]; delete _dirtySnapshots["scBulkModal"]; $("scBulkModal").classList.remove("open");
   }catch(e){ Swal.close(); SW.err("บันทึกไม่สำเร็จ", e.message); }
 };
 
